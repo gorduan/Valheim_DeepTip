@@ -1,0 +1,6 @@
+bin/
+obj/
+build-output/
+GamePaths.user.props
+tests/bin/
+tests/obj/

@@ -1,0 +1,769 @@
+{
+  "$schema": "../../schema/deeptip.schema.json",
+  "$locale": "en",
+  "$comment": "DeepTip glossary for Valheim 1.0.20. Aliases match the English game texts (localization 1.0.20). Numbers are checked against the decompiled game code and game data of 1.0.20.",
+  "$ui": {
+    "close": "Close",
+    "pin": "Pin",
+    "unpin": "Unpin",
+    "missing": "No explanation for this term yet.",
+    "fallback": "Not translated yet",
+    "hint": "Click to pin · Esc closes",
+    "seeAlso": "See also:",
+    "search": "Search terms …",
+    "mentionedIn": "Mentioned in",
+    "empty": "No matches."
+  },
+
+  "deeptip.about": {
+    "title": "DeepTip",
+    "short": "Explanations with depth: highlighted terms open further explanations.",
+    "body": "DeepTip explains what you see in Valheim. Rest the mouse for a moment on an inventory slot, a skill or a button, and a window opens next to it. Highlighted [[deeptip.term|terms]] inside it open another window when you hover them, and a click [[deeptip.pin|pins]] it. Read as deep as you like.\n\nControls: [[deeptip.mouse|mouse]] and [[deeptip.keyboard|keyboard]]. You find every entry in the [[deeptip.lexicon|lexicon]].",
+    "note": "This version supports mouse and keyboard only (no touch, no gamepad)."
+  },
+  "deeptip.term": {
+    "title": "Highlighted term",
+    "short": "Has its own entry – hover to see it.",
+    "body": "A highlighted term has its own entry. Hover it and a preview appears next to the window; move away and it disappears again. A click [[deeptip.pin|pins]] the window.\n\nIn the tooltips of Valheim and other mods, DeepTip highlights known terms by itself, each at its first occurrence in the window. You can switch this off in the settings."
+  },
+  "deeptip.pin": {
+    "title": "Pin",
+    "short": "A pinned window stays open until you close it.",
+    "body": "A pinned window stays open until you close it with the X or with `Esc`. To pin a window, click a [[deeptip.term|term]] or the pin.\n\nIf you like, DeepTip also pins a preview after the mouse has rested in it for a while (timer lock in the settings, off by default).\n\n`Shift+Esc` closes all windows at once."
+  },
+  "deeptip.mouse": {
+    "title": "Mouse controls",
+    "short": "Rest to open, click to pin.",
+    "body": "- Rest the mouse for half a second on an inventory slot, a skill or a button: its window opens next to it. Valheim's own tooltips are such windows too, and you can move the mouse into them.\n- Hover a [[deeptip.term|term]]: its preview appears.\n- Click a term or the pin: [[deeptip.pin|pin]] it.\n- The X closes a window."
+  },
+  "deeptip.keyboard": {
+    "title": "Keyboard controls",
+    "short": "F1 opens, Esc closes.",
+    "body": "- `F1` opens the window for the element under the mouse, already [[deeptip.pin|pinned]].\n- `Esc` closes the newest window. Only when none is left open do Valheim's menus react to `Esc` again.\n- `Shift+Esc` closes all windows."
+  },
+  "deeptip.lexicon": {
+    "title": "Lexicon",
+    "short": "Every entry on one page in the Valheim Compendium, with search.",
+    "body": "The lexicon is a page in the Valheim Compendium. It lists every entry with its short description, and the search field finds a term quickly. Each entry shows which other entries mention it.\n\nFrom the lexicon you go on as everywhere else: [[deeptip.term|terms]] open a preview, a click [[deeptip.pin|pins]] it."
+  },
+
+  "valheim.damage.overview": {
+    "title": "Damage types",
+    "short": "A hit can contain several damage types; each is checked separately against the target's resistances.",
+    "body": "A hit consists of one or more damage types. Each type is checked separately against the target's [[valheim.damagemod.overview|damage modifier]]; after that, your [[valheim.combat.armor|armour]] reduces it if you are the one being hit.\n\n- **Physical:** [[valheim.damage.blunt]], [[valheim.damage.slash]], [[valheim.damage.pierce]]\n- **Elemental:** [[valheim.damage.fire]], [[valheim.damage.frost]], [[valheim.damage.lightning]]\n- **Other:** [[valheim.damage.poison]], [[valheim.damage.spirit]]\n- **Tools:** [[valheim.damage.chop]], [[valheim.damage.pickaxe|Pickaxe]]\n\nThe yellow range after a damage value shows what you actually deal with your current [[valheim.skill.overview|skill]].",
+    "see": ["valheim.combat.stagger"],
+    "note": "Physical = Blunt+Slash+Pierce (HitData.GetTotalPhysicalDamage), elemental = Fire+Frost+Lightning."
+  },
+  "valheim.damage.blunt": {
+    "title": "Blunt",
+    "short": "Physical impact damage, typical of clubs and maces.",
+    "body": "Blunt is [[valheim.damage.overview|physical damage]] from impact. It counts fully towards [[valheim.combat.stagger|stagger]] and is reduced by [[valheim.combat.armor|armour]] and [[valheim.combat.blockpower|block armour]].\n\nSkeletons and blobs are [[valheim.damagemod.weak|weak]] to blunt, trolls are [[valheim.damagemod.resistant|resistant]].",
+    "aliases": ["Blunt"],
+    "see": ["valheim.skill.clubs"]
+  },
+  "valheim.damage.slash": {
+    "title": "Slash",
+    "short": "Physical cutting damage, typical of swords, axes and knives.",
+    "body": "Slash is cutting [[valheim.damage.overview|physical damage]]. It counts fully towards [[valheim.combat.stagger|stagger]] and is reduced by [[valheim.combat.armor|armour]] and [[valheim.combat.blockpower|block armour]].\n\nStone golems and blobs are [[valheim.damagemod.resistant|resistant]] to slash.",
+    "aliases": ["Slash"],
+    "see": ["valheim.skill.swords", "valheim.skill.axes"]
+  },
+  "valheim.damage.pierce": {
+    "title": "Pierce",
+    "short": "Physical piercing damage, typical of spears, atgeirs, arrows and bolts.",
+    "body": "Pierce is piercing [[valheim.damage.overview|physical damage]]. It counts fully towards [[valheim.combat.stagger|stagger]] and is reduced by [[valheim.combat.armor|armour]] and [[valheim.combat.blockpower|block armour]].\n\nTrolls and ticks are [[valheim.damagemod.weak|weak]] to pierce, skeletons are [[valheim.damagemod.resistant|resistant]], and the Abomination is even [[valheim.damagemod.veryresistant|very resistant]].",
+    "aliases": ["Pierce"],
+    "see": ["valheim.skill.spears", "valheim.skill.bows"]
+  },
+  "valheim.damage.chop": {
+    "title": "Chop",
+    "short": "Tool damage of axes against trees and logs.",
+    "body": "Chop is the damage axes use to fell trees and cut logs. If your tool's tier is too low for a tree, you see “Too hard”.\n\nMost creatures ignore chop, and you as a player are [[valheim.damagemod.immune|immune]]. When you hit trees, the [[valheim.skill.woodcutting]] skill counts.",
+    "aliases": ["Chop"],
+    "see": ["valheim.damage.pickaxe", "valheim.power.theelder"]
+  },
+  "valheim.damage.pickaxe": {
+    "title": "Pickaxe (damage type)",
+    "short": "Tool damage against rocks, stone and ore.",
+    "body": "Pickaxes deal this damage. It breaks rocks, stone and ore deposits; if your tool's tier is too low, you see “Too hard”.\n\nMost creatures ignore it, and you as a player are [[valheim.damagemod.immune|immune]]. Stone golems, however, are [[valheim.damagemod.veryweak|very weak]] to it. Mining trains [[valheim.skill.pickaxes]].",
+    "aliases": ["Pickaxe"],
+    "see": ["valheim.damage.chop", "valheim.power.theelder"]
+  },
+  "valheim.damage.fire": {
+    "title": "Fire",
+    "short": "Elemental damage that works as burning over a few seconds.",
+    "body": "Fire damage is not taken at once but spread over a few seconds as [[valheim.status.burning]]. When you are [[valheim.status.wet|wet]], the burning goes out faster and you are [[valheim.damagemod.resistant|resistant]] to fire.\n\nGreydwarfs and The Elder are [[valheim.damagemod.veryweak|very weak]] to fire, skeletons and lox are [[valheim.damagemod.weak|weak]]. Surtlings, leeches and serpents are [[valheim.damagemod.immune|immune]].",
+    "aliases": ["Fire"],
+    "see": ["valheim.damage.overview"]
+  },
+  "valheim.damage.frost": {
+    "title": "Frost",
+    "short": "Elemental damage that hits at once and slows the target.",
+    "body": "Frost hits at once and slows the target. The higher the damage compared with maximum health, the longer the slow lasts; it is strongest at the start.\n\nIf you are [[valheim.damagemod.resistant|resistant]] to frost, you are not slowed and feel neither [[valheim.status.cold|cold]] nor [[valheim.status.freezing|freezing]]. When you are [[valheim.status.wet|wet]], you are [[valheim.damagemod.weak|weak]] to frost.",
+    "aliases": ["Frost", "Frost resistance", "hypothermia"],
+    "see": ["valheim.biome.mountain"]
+  },
+  "valheim.damage.lightning": {
+    "title": "Lightning",
+    "short": "Elemental damage that hits at once and counts towards stagger.",
+    "body": "Lightning damage is taken at once and counts towards [[valheim.combat.stagger|stagger]] like physical damage. When you are [[valheim.status.wet|wet]], you are [[valheim.damagemod.weak|weak]] to lightning.\n\nMorgen are weak to lightning. [[valheim.power.yagluth|Yagluth's power]] makes you [[valheim.damagemod.resistant|resistant]].",
+    "aliases": ["Lightning", "Lightning damage"]
+  },
+  "valheim.damage.poison": {
+    "title": "Poison",
+    "short": "Damage over time; the stronger the poisoning, the longer it lasts.",
+    "body": "Poison damage is spread over several seconds, see [[valheim.status.poison]]. A weaker poisoning does not replace a stronger one that is still running.\n\nUndead such as skeletons and draugr are [[valheim.damagemod.immune|immune]], greydwarfs are [[valheim.damagemod.resistant|resistant]]. The Poison Resistance Mead makes you [[valheim.damagemod.veryresistant|very resistant]].",
+    "aliases": ["Poison", "Poison damage"]
+  },
+  "valheim.damage.spirit": {
+    "title": "Spirit",
+    "short": "Damage that mainly hurts the undead; living creatures and players are mostly unaffected.",
+    "body": "Spirit damage works over a few seconds. Most living creatures are [[valheim.damagemod.immune|immune]], and so are you as a player.\n\nSkeletons and draugr take it in full; ghosts, the Charred and Fallen Valkyries are even [[valheim.damagemod.weak|weak]] to it.",
+    "aliases": ["Spirit"]
+  },
+
+  "valheim.damagemod.overview": {
+    "title": "Damage modifier",
+    "short": "How strongly a damage type affects a target – from immune to very weak.",
+    "body": "Every creature has a modifier for each [[valheim.damage.overview|damage type]]. Equipment, meads and powers can change it; the tooltip shows it as “Damage modifier: … VS …”.\n\n- [[valheim.damagemod.immune]]: no damage\n- [[valheim.damagemod.veryresistant]]: ×0.25\n- [[valheim.damagemod.resistant]]: ×0.5\n- [[valheim.damagemod.slightlyresistant]]: ×0.75\n- [[valheim.damagemod.slightlyweak]]: ×1.25\n- [[valheim.damagemod.weak]]: ×1.5\n- [[valheim.damagemod.veryweak]]: ×2\n\nSeveral sources do not add up; each type has one value: resistances override weaknesses, stronger resistances override weaker ones, and immunity overrides both.",
+    "aliases": ["Damage modifier"]
+  },
+  "valheim.damagemod.immune": {
+    "title": "Immune",
+    "short": "This damage type deals no damage at all.",
+    "body": "Against a damage type a target is immune to, you achieve nothing. If a creature is immune to fire, frost, lightning or poison, the matching state such as [[valheim.status.burning]] does not start either.\n\nImmunity overrides any other [[valheim.damagemod.overview|damage modifier]].",
+    "aliases": ["Immune"]
+  },
+  "valheim.damagemod.veryresistant": {
+    "title": "Very resistant",
+    "short": "Only a quarter of this damage type gets through (×0.25).",
+    "body": "A very resistant target takes only 25 % of this [[valheim.damage.overview|damage type]]. The Poison Resistance Mead, for example, makes you very resistant to [[valheim.damage.poison]], and the Abomination is very resistant to [[valheim.damage.pierce]].\n\nA weaker [[valheim.damagemod.resistant|resistance]] cannot override this value.",
+    "aliases": ["Very resistant"]
+  },
+  "valheim.damagemod.resistant": {
+    "title": "Resistant",
+    "short": "Only half of this damage type gets through (×0.5).",
+    "body": "A resistant target takes only 50 % of this [[valheim.damage.overview|damage type]]. Trolls, for example, are resistant to [[valheim.damage.blunt]], draugr to [[valheim.damage.fire]].\n\nA resistance prevents a weakness to the same type. Resistance to [[valheim.damage.frost]] also protects you from [[valheim.status.cold|cold]].",
+    "aliases": ["Resistant"]
+  },
+  "valheim.damagemod.slightlyresistant": {
+    "title": "Slightly resistant",
+    "short": "Three quarters of this damage type get through (×0.75).",
+    "body": "A slightly resistant target takes 75 % of this [[valheim.damage.overview|damage type]]. [[valheim.power.bonemass|Bonemass's power]], for example, makes you slightly resistant to [[valheim.damage.blunt]], [[valheim.damage.slash]] and [[valheim.damage.pierce]].\n\nEven a slight resistance prevents a weakness to the same type.",
+    "aliases": ["Slightly resistant"]
+  },
+  "valheim.damagemod.slightlyweak": {
+    "title": "Slightly weak",
+    "short": "A quarter more damage of this type (×1.25).",
+    "body": "A slightly weak target takes 125 % of this [[valheim.damage.overview|damage type]]. Any [[valheim.damagemod.resistant|resistance]] to the same type cancels the weakness.",
+    "aliases": ["Slightly weak"]
+  },
+  "valheim.damagemod.weak": {
+    "title": "Weak",
+    "short": "Half again as much damage of this type (×1.5).",
+    "body": "A weak target takes 150 % of this [[valheim.damage.overview|damage type]]. Skeletons are weak to [[valheim.damage.blunt]], trolls to [[valheim.damage.pierce]].\n\nYou can become weak too: when you are [[valheim.status.wet|wet]], you are weak to [[valheim.damage.frost]] and [[valheim.damage.lightning]].",
+    "aliases": ["Weak"]
+  },
+  "valheim.damagemod.veryweak": {
+    "title": "Very weak",
+    "short": "Double damage of this type (×2).",
+    "body": "A very weak target takes double damage from this [[valheim.damage.overview|damage type]]. Greydwarfs are very weak to [[valheim.damage.fire]], stone golems to [[valheim.damage.pickaxe|pickaxe]] damage.\n\nWhile you are [[valheim.status.tared|tarred]], you are very weak to fire.",
+    "aliases": ["Very weak"]
+  },
+
+  "valheim.combat.armor": {
+    "title": "Armour",
+    "short": "Reduces damage; the higher your armour compared with the hit, the better it protects.",
+    "body": "Your armour is the sum of helmet, chest, legs and cape. It works after the [[valheim.damagemod.overview|damage modifier]] on all [[valheim.damage.overview|damage types]] except chop and pickaxe.\n\n- If your armour is at most half the damage, it simply subtracts its value.\n- If it is higher, the damage drops more and more but never reaches zero.\n\nEvery hit costs a random armour piece some [[valheim.item.durability|durability]]. Higher [[valheim.item.quality|quality]] raises the armour value.",
+    "aliases": ["Armour"],
+    "see": ["valheim.combat.blockpower"],
+    "note": "HitData.ApplyArmor: damage < 2·armour → damage²/(4·armour), otherwise damage − armour."
+  },
+  "valheim.combat.block": {
+    "title": "Blocking",
+    "short": "Catch hits from the front with a shield or weapon; costs stamina.",
+    "body": "When blocking, you catch hits from the front with your shield or weapon. The block works like [[valheim.combat.armor|armour]] with the value of your [[valheim.combat.blockpower|block armour]] and costs [[valheim.stat.stamina|stamina]] – the more damage it catches, the more.\n\nIf your stamina runs out or you are [[valheim.combat.stagger|staggered]], the whole hit goes through. While [[valheim.status.encumbered|encumbered]] you cannot block. If you catch a hit right after raising your guard, you [[valheim.combat.parry|parry]].",
+    "aliases": ["Blocking", "Block stamina cost", "Block stamina use", "Block stamina return"],
+    "see": ["valheim.skill.blocking", "valheim.combat.blockforce"],
+    "note": "Stamina cost: 10 × (damage caught / block armour), at most 10, before modifiers."
+  },
+  "valheim.combat.blockpower": {
+    "title": "Block armour",
+    "short": "How much damage a block catches; the yellow value already includes your Blocking skill.",
+    "body": "Block armour is the armour value of your [[valheim.combat.block|block]]. The first value in the tooltip belongs to the item, the yellow one in brackets includes your [[valheim.skill.blocking|Blocking]] skill – at level 100 it is 50 % higher.\n\nWhen you [[valheim.combat.parry|parry]], block armour is multiplied by the [[valheim.combat.parrybonus|parry bonus]]. Higher [[valheim.item.quality|quality]] raises the base value.",
+    "aliases": ["Block armour", "Block power"]
+  },
+  "valheim.combat.blockforce": {
+    "title": "Block force",
+    "short": "How far a successful block pushes a melee attacker back.",
+    "body": "When you successfully block a melee hit, block force pushes the attacker back. The more of your [[valheim.combat.blockpower|block armour]] the hit used up, the weaker the push. Ranged attackers are not pushed back.\n\nThe [[valheim.combat.knockback|knockback]] you take yourself is also smaller while [[valheim.combat.block|blocking]].",
+    "aliases": ["Block force", "Parry force"]
+  },
+  "valheim.combat.parry": {
+    "title": "Parry",
+    "short": "A block in the first quarter second: more block armour, no stamina, and the attacker staggers.",
+    "body": "If an attack hits you within the first quarter second after you raise your [[valheim.combat.block|block]], you parry. This only works with items that have a [[valheim.combat.parrybonus|parry bonus]] – tower shields have none.\n\n- Your [[valheim.combat.blockpower|block armour]] is multiplied by the parry bonus.\n- The parry costs no [[valheim.stat.stamina|stamina]].\n- The attacker is [[valheim.combat.stagger|staggered]] if it can be; many bosses cannot.\n- You gain [[valheim.combat.adrenaline|adrenaline]], and [[valheim.skill.blocking|Blocking]] rises twice as fast.",
+    "aliases": ["parried", "parry"]
+  },
+  "valheim.combat.parrybonus": {
+    "title": "Parry bonus",
+    "short": "Factor by which a parry multiplies your block armour.",
+    "body": "The tooltip shows the parry bonus as a factor. When you [[valheim.combat.parry|parry]], your [[valheim.combat.blockpower|block armour]] is multiplied by it. Bucklers have 2.5, most other shields 1.5; items without a parry bonus, such as tower shields, cannot parry.\n\nSome effects raise the parry bonus further by a percentage.",
+    "aliases": ["Parry bonus"]
+  },
+  "valheim.combat.stagger": {
+    "title": "Stagger",
+    "short": "Too much force in a short time throws you or the enemy off balance for a moment.",
+    "body": "Physical damage and [[valheim.damage.lightning]] fill a stagger bar. When it is full, the target staggers briefly and cannot attack; without new hits the bar empties within five seconds. Your limit is 40 % of your maximum [[valheim.stat.health|health]] – more health from [[valheim.food.food|food]] lets you take more.\n\n- Staggered enemies take double damage.\n- While [[valheim.combat.block|blocking]], the part that gets through fills your bar.\n- A [[valheim.combat.parry|parry]] staggers the attacker.",
+    "aliases": ["staggered", "Stagger resistance"],
+    "see": ["valheim.power.fader"]
+  },
+  "valheim.combat.backstab": {
+    "title": "Backstab",
+    "short": "Damage factor for hits against enemies that have not noticed you yet.",
+    "body": "If you hit an enemy that has not noticed you yet, the whole hit is multiplied by this factor – shown in the tooltip, for example “6x” on knives. After that, the same enemy is safe from another such attack for five minutes.\n\nIt works best while you [[valheim.skill.sneak|sneak]].",
+    "aliases": ["Backstab"],
+    "see": ["valheim.skill.knives"]
+  },
+  "valheim.combat.knockback": {
+    "title": "Knockback",
+    "short": "How far a hit pushes the target away.",
+    "body": "A weapon's knockback pushes the targets it hits away. Like damage, it varies with your [[valheim.skill.overview|skill]]. Heavy creatures are pushed less.\n\nHeavy equipment with negative [[valheim.item.movement|movement speed]] dampens the knockback you take yourself.",
+    "aliases": ["Knockback"]
+  },
+  "valheim.combat.adrenaline": {
+    "title": "Adrenaline",
+    "short": "Builds up in combat while you wear a trinket; when full, the trinket's effect kicks in.",
+    "body": "You only gather adrenaline with a [[valheim.item.trinket|trinket]], because the trinket sets how much fits into the bar. It fills through hits, [[valheim.combat.block|blocks]], [[valheim.combat.parry|parries]], well-timed [[valheim.skill.dodge|dodges]], [[valheim.combat.stagger|staggering]] enemies and activating a [[valheim.power.overview|Forsaken power]]. Without new gains it slowly drains again.\n\nWhen it is full, the trinket's adrenaline effect kicks in and the bar starts over.",
+    "aliases": ["Adrenaline", "Adrenaline Rush", "Adrenaline effect", "Parry adrenaline"]
+  },
+
+  "valheim.stat.health": {
+    "title": "Health",
+    "short": "Your hit points: 25 as a base, everything else comes from food.",
+    "body": "Without food you have 25 health. Every [[valheim.food.food|food]] with a health value raises the maximum while it lasts. Health does not heal on its own; instead it comes back every ten seconds by the [[valheim.food.healing|healing]] of your meals, and [[valheim.stat.regen|regeneration]] effects and [[valheim.food.mead|mead]] help as well.\n\nMore maximum health also lets you take more before you are [[valheim.combat.stagger|staggered]]. Some [[valheim.skill.bloodmagic|Blood Magic]] staffs cost health.",
+    "aliases": ["Health", "Use health"]
+  },
+  "valheim.stat.stamina": {
+    "title": "Stamina",
+    "short": "For running, jumping, swimming, attacks, blocking and dodging; base 50, more from food.",
+    "body": "Without food you have 50 stamina; [[valheim.food.food|food]] raises the maximum. Running, jumping, swimming, attacks, [[valheim.combat.block|blocking]] and dodging use it up; many [[valheim.skill.overview|skills]] lower the cost of their activity.\n\nOne second after you last used it, it starts to recover: by 6 per second, up to twice as fast when the bar is nearly empty. It does not recover during attacks, while dodging, while swimming or while you are [[valheim.status.encumbered|encumbered]], and more slowly while blocking. See also [[valheim.stat.regen]].",
+    "aliases": ["Stamina", "Use stamina", "Draw stamina"]
+  },
+  "valheim.stat.eitr": {
+    "title": "Eitr",
+    "short": "Magical power for staffs; you only get it from certain foods.",
+    "body": "Without the right [[valheim.food.food|food]] you have no eitr. Only dishes with an eitr value, for example made from ingredients of the [[valheim.biome.mistlands|Mistlands]], give you an eitr bar. Staffs of [[valheim.skill.elementalmagic|Elemental Magic]] and [[valheim.skill.bloodmagic|Blood Magic]] use it up.\n\nEitr starts to recover one second after you last used it, faster when the bar is empty. Mage equipment can raise eitr regeneration.",
+    "aliases": ["Eitr", "Use eitr"]
+  },
+  "valheim.stat.regen": {
+    "title": "Regeneration",
+    "short": "How fast health, stamina and eitr come back; states speed this up or slow it down.",
+    "body": "Health comes back every ten seconds by the [[valheim.food.healing|healing]] of your food, while [[valheim.stat.stamina|stamina]] and [[valheim.stat.eitr|eitr]] recover continuously. States change the pace:\n\n- Faster: [[valheim.status.rested|Rested]], [[valheim.status.resting|Resting]], some [[valheim.food.mead|meads]] and [[valheim.item.trinket|trinkets]]\n- Slower: [[valheim.status.wet|Wet]], [[valheim.status.cold|Cold]], [[valheim.status.freezing|Freezing]] (no health regeneration at all)\n\nSeveral bonuses add up, several penalties multiply with each other.",
+    "aliases": ["Health regen", "Stamina regen", "Eitr regen", "regeneration"]
+  },
+  "valheim.stat.carryweight": {
+    "title": "Carry weight",
+    "short": "Up to 300 weight you carry freely; above that you are encumbered.",
+    "body": "The weight of all items in your inventory adds up, including the equipment you wear. If it exceeds your carry weight of 300, you are [[valheim.status.encumbered|encumbered]].\n\nYou can carry more with the belt Megingjord (+150), the Mead of Troll Endurance (+250) and [[valheim.power.moder|Moder's power]] (+300). [[valheim.status.corpserun|Corpse run]] also gives +150.",
+    "aliases": ["Weight", "Max carry weight", "carry weight"],
+    "note": "Base 300 from the player prefab; world settings can change it."
+  },
+  "valheim.item.movement": {
+    "title": "Movement speed",
+    "short": "Heavy equipment slows you down and makes running, jumping and dodging cost more stamina.",
+    "body": "Negative movement speed on armour, shield or weapon makes you slower when walking and running. It also raises the [[valheim.stat.stamina|stamina]] cost of running, jumping and dodging and dampens the [[valheim.combat.knockback|knockback]] you take.\n\nThe values of all equipped pieces add up. States such as [[valheim.status.tared|Tarred]] lower your speed too.",
+    "aliases": ["Movement speed"]
+  },
+
+  "valheim.status.rested": {
+    "title": "Rested",
+    "short": "Faster regeneration and 50 % faster skill gain for several minutes.",
+    "body": "You become rested when you wake up in a bed or after [[valheim.status.resting|resting]] for 20 seconds. The effect lasts 8 minutes, plus one minute for each [[valheim.rest.comfort|comfort]] level above 1.\n\n- [[valheim.stat.regen|Regeneration]]: health +50 %, stamina and eitr +100 %\n- All [[valheim.skill.overview|skills]] rise 50 % faster",
+    "aliases": ["Rested"]
+  },
+  "valheim.status.resting": {
+    "title": "Resting",
+    "short": "Sit by a fire, or stand by one inside a shelter: strong regeneration, rested after 20 seconds.",
+    "body": "You rest when you sit by a fire or stand by a fire inside a [[valheim.status.shelter|shelter]]. You must not be [[valheim.status.wet|wet]], [[valheim.status.cold|cold]] or [[valheim.status.burning|burning]], and no enemy may be aware of you.\n\nWhile resting you regenerate strongly: health +200 %, stamina and eitr +300 %. After 20 seconds you become [[valheim.status.rested|rested]]. The icon shows your [[valheim.rest.comfort|comfort]] level meanwhile.",
+    "aliases": ["Resting"]
+  },
+  "valheim.rest.comfort": {
+    "title": "Comfort",
+    "short": "Sets how long Rested lasts: each level above 1 adds one minute.",
+    "body": "The level starts at 1. Inside a [[valheim.status.shelter|shelter]] you get 1 more, plus the comfort value of the furnishings within 10 metres: fire, bed, chairs, tables, rugs, banners and the like.\n\nOnly the best piece of each group counts, and identical pieces count only once. Outside a shelter the level stays at 1. The level extends [[valheim.status.rested|Rested]].",
+    "aliases": ["Comfort", "comfort level"]
+  },
+  "valheim.status.shelter": {
+    "title": "Shelter",
+    "short": "You are under a roof and mostly enclosed.",
+    "body": "You are sheltered when there is a roof above you and at least 80 % of your surroundings are covered. Then your [[valheim.rest.comfort|comfort]] rises, and by a fire you can [[valheim.status.resting|rest]] standing up.\n\nIn freezing cold, [[valheim.status.freezing|freezing]] turns into mere [[valheim.status.cold|cold]] inside a shelter; with a fire next to you, you do not get cold at all.",
+    "aliases": ["Shelter", "sheltered"]
+  },
+  "valheim.status.campfire": {
+    "title": "Fire (warmth)",
+    "short": "You are close to a fire: needed for resting, keeps the cold away and dries you.",
+    "body": "This state shows that you stand in the warmth of a fire. You need it to [[valheim.status.resting|rest]], it keeps the night's [[valheim.status.cold|cold]] away, and it dries you much faster when you are [[valheim.status.wet|wet]].\n\nAgainst [[valheim.status.freezing|freezing]] a fire alone is not quite enough: without [[valheim.status.shelter|shelter]] you are still cold.",
+    "aliases": ["Campfire"],
+    "note": "In the game this state is just called “Fire”; that alias belongs to the damage type."
+  },
+  "valheim.status.wet": {
+    "title": "Wet",
+    "short": "From rain or water: less regeneration, weak to frost and lightning.",
+    "body": "Rain without a roof above you, or water, makes you wet; after that the state lasts two minutes. By a fire you dry much faster.\n\n- [[valheim.stat.regen|Regeneration]]: health −25 %, stamina and eitr −15 %\n- [[valheim.damagemod.resistant|Resistant]] to [[valheim.damage.fire]], [[valheim.damagemod.weak|weak]] to [[valheim.damage.frost]] and [[valheim.damage.lightning]]\n- You cannot [[valheim.status.resting|rest]] while wet",
+    "note": "No alias: the game word “Wet” has only 3 characters."
+  },
+  "valheim.status.cold": {
+    "title": "Cold",
+    "short": "Cold weather without a fire: clearly weaker regeneration.",
+    "body": "You get cold when the weather is cold – in most places at night – and no fire is near. In freezing places such as the [[valheim.biome.mountain|Mountain]] you are cold as soon as you lack a fire or [[valheim.status.shelter|shelter]]; if you lack both, you are [[valheim.status.freezing|freezing]].\n\n- [[valheim.stat.regen|Regeneration]]: health −50 %, stamina and eitr −25 %\n- You cannot [[valheim.status.resting|rest]] while cold\n\nResistance to [[valheim.damage.frost]], for example from the Frost Resistance Mead, prevents cold entirely.",
+    "aliases": ["Cold"]
+  },
+  "valheim.status.freezing": {
+    "title": "Freezing",
+    "short": "Freezing cold without fire and shelter: no healing, little stamina, and damage over time.",
+    "body": "You freeze in freezing places such as the [[valheim.biome.mountain|Mountain]] when you are neither by a fire nor inside a [[valheim.status.shelter|shelter]].\n\n- No health [[valheim.stat.regen|regeneration]], stamina and eitr −60 %\n- You lose 1 health every second\n- You are [[valheim.damagemod.resistant|resistant]] to [[valheim.damage.fire]]\n\nResistance to [[valheim.damage.frost]] – for example from the wolf armour or the Frost Resistance Mead – protects you completely.",
+    "aliases": ["Freezing"]
+  },
+  "valheim.status.burning": {
+    "title": "Burning",
+    "short": "Fire damage that works over a few seconds; being wet puts it out faster.",
+    "body": "When you take [[valheim.damage.fire|fire damage]], it is spread over about five seconds. New hits add to the rest and restart the timer.\n\nWhen you are [[valheim.status.wet|wet]], the burning ends much sooner. The Fire Resistance Barley Wine makes you [[valheim.damagemod.resistant|resistant]] to fire. While you burn, you cannot [[valheim.status.resting|rest]].",
+    "aliases": ["Burning"]
+  },
+  "valheim.status.poison": {
+    "title": "Poison (state)",
+    "short": "Poisoning: poison damage every second; a lot of poison lasts longer.",
+    "body": "A poisoning splits the [[valheim.damage.poison|poison damage]] into hits once per second. The more poison, the longer it lasts. Only a stronger poisoning replaces a running one.\n\nThe Poison Resistance Mead makes you [[valheim.damagemod.veryresistant|very resistant]], [[valheim.power.queen|The Queen's power]] [[valheim.damagemod.resistant|resistant]].",
+    "aliases": ["poisoned"],
+    "note": "In the game this state is called “Poison”; that alias belongs to the damage type."
+  },
+  "valheim.status.smoked": {
+    "title": "Smoked",
+    "short": "Smoke around your head costs health every second.",
+    "body": "When smoke gathers around your head, for example under the roof above a fire, you lose 2 [[valheim.stat.health|health]] every second. Armour and resistances do not help.\n\nThe state ends as soon as your head is clear again. Give buildings with a fire some openings so the smoke can escape.",
+    "aliases": ["Smoked", "smoke"]
+  },
+  "valheim.status.encumbered": {
+    "title": "Encumbered",
+    "short": "More weight than carry weight: slow, no running, jumping, dodging or blocking.",
+    "body": "If you carry more than your [[valheim.stat.carryweight|carry weight]] allows, you are encumbered. You only move at sneaking speed and can neither run, jump, dodge nor [[valheim.combat.block|block]].\n\nMoving costs 5 [[valheim.stat.stamina|stamina]] per second, and stamina does not recover. Once it is empty, you cannot move at all. Drop some items or raise your carry weight.",
+    "aliases": ["Encumbered"]
+  },
+  "valheim.status.corpserun": {
+    "title": "Corpse run",
+    "short": "After emptying your tombstone: briefly tougher, more stamina, more carry weight.",
+    "body": "Once you have completely emptied your tombstone after dying, you get corpse run for 50 seconds:\n\n- [[valheim.damagemod.resistant|Resistant]] to [[valheim.damage.blunt]], [[valheim.damage.slash]] and [[valheim.damage.pierce]]\n- Running and jumping cost 75 % less [[valheim.stat.stamina|stamina]]\n- +150 [[valheim.stat.carryweight|carry weight]]\n- You heal 5 [[valheim.stat.health|health]] every second",
+    "aliases": ["Corpse run"],
+    "see": ["valheim.status.softdeath"]
+  },
+  "valheim.status.softdeath": {
+    "title": "No skill drain",
+    "short": "For ten minutes after a death, dying again costs no skills.",
+    "body": "When you die, you lose 5 % of every [[valheim.skill.overview|skill]] and all your [[valheim.food.food|food]]; your items stay behind in your tombstone. Afterwards this state shows for ten minutes that dying again will not cost skills.\n\nThis lets you recover your tombstone without losing twice. Once you have emptied it, [[valheim.status.corpserun]] helps you.",
+    "aliases": ["No skill drain"],
+    "note": "5 % applies with the default world rules; the death penalty world setting can change it."
+  },
+  "valheim.status.tared": {
+    "title": "Tarred",
+    "short": "Sticky tar: half speed and very weak to fire.",
+    "body": "If you wade through tar, you stay tarred for ten more seconds after getting out. Meanwhile you move 50 % slower and are [[valheim.damagemod.veryweak|very weak]] to [[valheim.damage.fire]].\n\nYou find tar pits in the [[valheim.biome.plains|Plains]].",
+    "aliases": ["Tarred"]
+  },
+  "valheim.status.puke": {
+    "title": "Feeling sick",
+    "short": "After Bukeperries: you lose your food bit by bit and move slower.",
+    "body": "If you eat Bukeperries, you feel sick for 15 seconds. Every two seconds you lose a random meal and a little [[valheim.stat.health|health]], and you move 50 % slower.\n\nThis way you empty your [[valheim.food.food|food]] slots on purpose to eat better meals.",
+    "aliases": ["Feeling sick", "Bukeperries"]
+  },
+
+  "valheim.food.food": {
+    "title": "Food",
+    "short": "Up to three meals raise your maximum health, stamina and eitr.",
+    "body": "You can have three different meals in your belly at once. Each raises your maximum [[valheim.stat.health|health]], [[valheim.stat.stamina|stamina]] or [[valheim.stat.eitr|eitr]] for its duration and heals you with its [[valheim.food.healing|healing]].\n\n- Towards the end of its duration the values drop faster and faster.\n- You can eat the same dish again only once half of its time is up; it then starts over.\n- When all slots are full, new food replaces the meal that has run down the most – but only once it is past half time.\n\nWhen you die, you lose all food.",
+    "aliases": ["Food"]
+  },
+  "valheim.food.healing": {
+    "title": "Healing",
+    "short": "Health a meal gives back to you every ten seconds.",
+    "body": "Valheim does not heal you on its own. Instead, every active meal gives you its healing as [[valheim.stat.health|health]] every ten seconds; the values of all meals add up.\n\n[[valheim.status.rested|Rested]], [[valheim.status.resting|Resting]] and other [[valheim.stat.regen|regeneration]] effects strengthen the healing, [[valheim.status.cold|cold]] and being [[valheim.status.wet|wet]] weaken it.",
+    "aliases": ["Healing"]
+  },
+  "valheim.food.mead": {
+    "title": "Mead",
+    "short": "Drinks with a temporary effect; for them a mead base matures in the fermenter.",
+    "body": "Mead is made in two steps: at the [[valheim.station.meadcauldron|Mead Ketill]] you mix a mead base, which then matures in the fermenter. The fermenter needs a roof.\n\nWhile a mead's effect is running, you cannot drink another mead of the same kind. For healing, stamina and eitr meads this lock lasts longer than the actual effect. Other kinds give resistances, such as the Frost Resistance Mead, or more [[valheim.stat.carryweight|carry weight]].",
+    "aliases": ["Mead", "Mead Base", "Fermenter"]
+  },
+
+  "valheim.skill.overview": {
+    "title": "Skills",
+    "short": "Improve by doing (level 0–100); when you die you lose 5 % of every skill.",
+    "body": "Every skill rises as you practise the activity. Higher levels need more and more practice; [[valheim.status.rested|Rested]] speeds this up by 50 %.\n\nFor weapons, the level decides how much of the shown damage you actually deal: at level 0 about 25–55 %, at level 100 about 85–100 %. The yellow range in the tooltip shows your current range. In addition, attacks at level 100 cost a third less stamina, eitr or health.\n\nWhen you die, every skill drops by 5 %, see [[valheim.status.softdeath]].",
+    "aliases": ["Skills", "skill"]
+  },
+  "valheim.skill.swords": {
+    "title": "Swords",
+    "short": "Damage with swords.",
+    "body": "Rises when you hit with a sword; hits on creatures count more. Higher levels raise the damage you actually deal and lower the [[valheim.stat.stamina|stamina]] for attacks by up to a third, see [[valheim.skill.overview]]. Swords deal [[valheim.damage.slash]].",
+    "aliases": ["Swords"]
+  },
+  "valheim.skill.knives": {
+    "title": "Knives",
+    "short": "Damage with knives; knives hit unaware enemies especially hard.",
+    "body": "Rises when you hit with a knife and raises the damage you actually deal; attacks cost up to a third less [[valheim.stat.stamina|stamina]]. Knives deal [[valheim.damage.slash]] and [[valheim.damage.pierce]] and have a [[valheim.combat.backstab|backstab]] of 6x – ideal from [[valheim.skill.sneak|sneaking]].",
+    "aliases": ["Knives"]
+  },
+  "valheim.skill.clubs": {
+    "title": "Clubs",
+    "short": "Damage with clubs, maces and sledges.",
+    "body": "Rises when you hit with a club and raises the damage you actually deal; attacks cost up to a third less [[valheim.stat.stamina|stamina]]. Clubs deal [[valheim.damage.blunt]] – good against skeletons and blobs.",
+    "aliases": ["Clubs"]
+  },
+  "valheim.skill.polearms": {
+    "title": "Polearms",
+    "short": "Damage with atgeirs.",
+    "body": "Rises when you hit with a polearm such as the atgeir and raises the damage you actually deal; attacks cost up to a third less [[valheim.stat.stamina|stamina]]. Atgeirs deal [[valheim.damage.pierce]].",
+    "aliases": ["Polearms"]
+  },
+  "valheim.skill.spears": {
+    "title": "Spears",
+    "short": "Damage with spears, in melee and thrown.",
+    "body": "Rises when you hit with a spear – in melee or thrown – and raises the damage you actually deal; attacks cost up to a third less [[valheim.stat.stamina|stamina]]. Spears deal [[valheim.damage.pierce]].",
+    "aliases": ["Spears"]
+  },
+  "valheim.skill.blocking": {
+    "title": "Blocking (skill)",
+    "short": "Raises your block armour by up to 50 %.",
+    "body": "Rises with every [[valheim.combat.block|block]], twice as fast with a [[valheim.combat.parry|parry]]. At level 100 your [[valheim.combat.blockpower|block armour]] is 50 % higher; the yellow value in the tooltip already includes your level."
+  },
+  "valheim.skill.axes": {
+    "title": "Axes",
+    "short": "Damage with axes in combat.",
+    "body": "Rises when you hit with an axe and raises the damage you actually deal; attacks cost up to a third less [[valheim.stat.stamina|stamina]]. Axes deal [[valheim.damage.slash]] and [[valheim.damage.chop]]. Against trees, [[valheim.skill.woodcutting]] counts instead.",
+    "aliases": ["Axes"]
+  },
+  "valheim.skill.woodcutting": {
+    "title": "Wood Cutting",
+    "short": "Axe damage against trees.",
+    "body": "Rises when you hit trees and logs with an axe. The level decides how much of the [[valheim.damage.chop|chop]] damage gets through there, so felling goes faster. [[valheim.power.theelder|The Elder's power]] helps on top.",
+    "aliases": ["Wood Cutting"]
+  },
+  "valheim.skill.bows": {
+    "title": "Bows",
+    "short": "Damage with bows; draw faster and use less stamina while holding.",
+    "body": "Rises with every hit with a bow and raises the damage you actually deal. At level 100 you draw in a fifth of the time, and holding the string costs a third less [[valheim.stat.stamina|stamina]]. Arrows deal [[valheim.damage.pierce]], special arrows also elemental damage.",
+    "aliases": ["Bows"]
+  },
+  "valheim.skill.crossbows": {
+    "title": "Crossbows",
+    "short": "Accuracy and damage with crossbows; faster reloading.",
+    "body": "Rises with every hit with a crossbow and raises the damage you actually deal. At level 100 you reload twice as fast. Bolts deal [[valheim.damage.pierce]].",
+    "aliases": ["Crossbows"]
+  },
+  "valheim.skill.elementalmagic": {
+    "title": "Elemental Magic",
+    "short": "Damage and eitr use of elemental staffs.",
+    "body": "Rises when your staffs hit with [[valheim.damage.fire]], [[valheim.damage.frost]], [[valheim.damage.lightning]] or [[valheim.damage.poison]]. Higher levels raise the damage you actually deal and lower the [[valheim.stat.eitr|eitr]] cost by up to a third. You craft the staffs at the [[valheim.station.magetable|Galdr Table]].",
+    "aliases": ["Elemental Magic"]
+  },
+  "valheim.skill.bloodmagic": {
+    "title": "Blood Magic",
+    "short": "Summons and protective spells; they cost eitr and sometimes health.",
+    "body": "Blood Magic staffs summon helpers such as skeletons or put up a shield that absorbs damage. They cost [[valheim.stat.eitr|eitr]] and sometimes [[valheim.stat.health|health]]; a higher level lowers the cost by up to a third, and the shield absorbs more damage.\n\nThe skill also rises when your summoned skeletons fight.",
+    "aliases": ["Blood Magic"]
+  },
+  "valheim.skill.unarmed": {
+    "title": "Fists",
+    "short": "Damage with your bare fists.",
+    "body": "Rises when you hit without a weapon and raises the damage you actually deal. The Fenris armour raises the skill by 15 levels as a [[valheim.item.seteffect|set effect]].",
+    "aliases": ["Fists"]
+  },
+  "valheim.skill.pickaxes": {
+    "title": "Pickaxes",
+    "short": "Damage with pickaxes, in combat and when mining.",
+    "body": "Rises with every hit with a pickaxe and raises the damage you actually deal, including the [[valheim.damage.pickaxe|mining damage]] on rocks and ore. Pickaxes also deal [[valheim.damage.pierce]].",
+    "aliases": ["Pickaxes"]
+  },
+  "valheim.skill.jump": {
+    "title": "Jump",
+    "short": "Up to 40 % more jumping force.",
+    "body": "Rises with every jump. At level 100 you jump with 40 % more force, higher and further. A jump costs [[valheim.stat.stamina|stamina]]; the skill does not lower that cost.",
+    "aliases": ["Jump"]
+  },
+  "valheim.skill.run": {
+    "title": "Run",
+    "short": "Up to 25 % faster at half the stamina cost.",
+    "body": "Rises while you run and have stamina. At level 100 you run 25 % faster and use only half as much [[valheim.stat.stamina|stamina]]. Negative [[valheim.item.movement|movement speed]] slows you down.",
+    "aliases": ["Run stamina usage"],
+    "note": "The skill name “Run” has only 3 characters and is therefore no alias."
+  },
+  "valheim.skill.sneak": {
+    "title": "Sneak",
+    "short": "Less stamina use and better stealth while sneaking.",
+    "body": "Rises while you sneak – faster when enemies are near. At level 100 sneaking costs 75 % less [[valheim.stat.stamina|stamina]], and you are harder to detect, especially in the dark. Unnoticed, your hits get a [[valheim.combat.backstab|backstab]] bonus.",
+    "aliases": ["Sneak"]
+  },
+  "valheim.skill.swim": {
+    "title": "Swim",
+    "short": "Lowers the stamina cost of swimming to as little as half.",
+    "body": "Rises while you make progress swimming. Without practice swimming costs 6 [[valheim.stat.stamina|stamina]] per second, at level 100 only 3. In the water stamina does not recover; once it is empty, you slowly drown.",
+    "aliases": ["Swim"]
+  },
+  "valheim.skill.ride": {
+    "title": "Riding",
+    "short": "Speed and stamina of your mount.",
+    "body": "Rises while you ride a saddled, [[valheim.tame.taming|tamed]] animal such as a lox. A higher level makes your mount faster and saves its stamina.",
+    "aliases": ["Riding"]
+  },
+  "valheim.skill.fishing": {
+    "title": "Fishing",
+    "short": "Less stamina use and faster reeling while fishing.",
+    "body": "Rises while you fish. When a fish is on the hook, it costs you [[valheim.stat.stamina|stamina]]; a higher level lowers this cost and lets you reel in faster. Every region has its own bait.",
+    "aliases": ["Fishing"]
+  },
+  "valheim.skill.cooking": {
+    "title": "Cooking",
+    "short": "Cook faster, chance for extra portions.",
+    "body": "Rises when you craft something at the [[valheim.station.cauldron|Cauldron]], the [[valheim.station.preptable|Food Preparation Table]] or the [[valheim.station.meadcauldron|Mead Ketill]], or grill on the cooking station. A higher level speeds up cooking and gives a chance for extra portions.",
+    "aliases": ["Cooking"]
+  },
+  "valheim.skill.farming": {
+    "title": "Farming",
+    "short": "Less stamina use and wear, larger harvest radius, chance for bonus yield.",
+    "body": "Rises when you plant and harvest. A higher level lowers the [[valheim.stat.stamina|stamina]] cost and the wear on the cultivator, widens the harvest radius and gives a chance for extra yield. [[valheim.power.yagluth|Yagluth's power]] raises it by 25 levels.",
+    "aliases": ["Farming"]
+  },
+  "valheim.skill.crafting": {
+    "title": "Crafting",
+    "short": "Craft faster, less hammer wear and less stamina when building.",
+    "body": "Rises when you craft something at a [[valheim.station.overview|crafting station]] or [[valheim.item.repair|repair]] an item. A higher level speeds up crafting, saves the hammer and lowers the [[valheim.stat.stamina|stamina]] cost of building.",
+    "aliases": ["Crafting"]
+  },
+  "valheim.skill.dodge": {
+    "title": "Dodge",
+    "short": "Dodge rolls cost up to 50 % less stamina.",
+    "body": "Rises with every dodge roll, much more when you escape a hit with it. During the roll you are briefly invulnerable to everything that can be dodged; if you escape a hit this way, you get half the stamina back and some [[valheim.combat.adrenaline|adrenaline]].\n\nA roll costs 15 [[valheim.stat.stamina|stamina]], at level 100 only half. While [[valheim.status.encumbered|encumbered]] you cannot dodge.",
+    "aliases": ["Dodge"]
+  },
+
+  "valheim.biome.meadows": {
+    "title": "Meadows",
+    "short": "The calm starting region with boars, deer and Eikthyr.",
+    "body": "Your journey begins in the Meadows. Here you find wood, stone and flint, along with boars and deer; boars can be [[valheim.tame.taming|tamed]]. Eikthyr, the first of the [[valheim.power.overview|Forsaken]], waits here, see [[valheim.power.eikthyr]].\n\nAfter that your path leads into the [[valheim.biome.blackforest|Black Forest]].",
+    "aliases": ["Meadows"]
+  },
+  "valheim.biome.blackforest": {
+    "title": "Black Forest",
+    "short": "Dense forest with greydwarfs and trolls; here you find copper and tin.",
+    "body": "In the Black Forest copper lies in the ground and tin along the shores; together they make bronze. In burial chambers beneath the earth you find surtling cores for the smelter. Greydwarfs are [[valheim.damagemod.veryweak|very weak]] to [[valheim.damage.fire]], trolls are [[valheim.damagemod.weak|weak]] to [[valheim.damage.pierce]].\n\nThe Elder rules here, see [[valheim.power.theelder]].",
+    "aliases": ["Black Forest"]
+  },
+  "valheim.biome.swamp": {
+    "title": "Swamp",
+    "short": "Dangerous land full of undead; iron lies in the Sunken Crypts.",
+    "body": "In the Swamp, draugr, skeletons, blobs and leeches lurk. You find iron as scrap in the Sunken Crypts, which you open with the Swamp Key. Many undead are [[valheim.damagemod.immune|immune]] to [[valheim.damage.poison]], skeletons and blobs are [[valheim.damagemod.weak|weak]] to [[valheim.damage.blunt]].\n\nBonemass waits here, see [[valheim.power.bonemass]].",
+    "aliases": ["Swamp"]
+  },
+  "valheim.biome.mountain": {
+    "title": "Mountain",
+    "short": "Freezing heights: without protection from the cold you freeze; here lies silver.",
+    "body": "The Mountain is so cold that without fire and [[valheim.status.shelter|shelter]] you are [[valheim.status.freezing|freezing]]. [[valheim.damagemod.resistant|Resistance]] to [[valheim.damage.frost]] protects you, for example from the wolf armour or the Frost Resistance Mead. Silver veins lie hidden in the ground; Bonemass's Wishbone senses them.\n\nWolves, drakes and stone golems live here, and Moder rules over the peaks, see [[valheim.power.moder]].",
+    "aliases": ["Mountain", "Mountains"]
+  },
+  "valheim.biome.plains": {
+    "title": "Plains",
+    "short": "Open land with fulings, deathsquitos and lox; barley and flax grow here.",
+    "body": "The Plains are open and dangerous: fulings live in camps, deathsquitos attack from the air, and lox are huge but can be [[valheim.tame.taming|tamed]]. Barley and flax grow here, and in tar pits you get [[valheim.status.tared|tarred]].\n\nYagluth waits here, see [[valheim.power.yagluth]].",
+    "aliases": ["Plains"]
+  },
+  "valheim.biome.mistlands": {
+    "title": "Mistlands",
+    "short": "Thick mist, seekers and dvergr; here you find ingredients full of eitr.",
+    "body": "Thick mist hides your view; a Wisplight clears it around you. Seekers, ticks, gjall and the dvergr live here, and much of what grows and lives here is infused with [[valheim.stat.eitr|eitr]]. Dishes made from these ingredients open up magic for you.\n\nThe Queen waits in the Infested Citadel, see [[valheim.power.queen]].",
+    "aliases": ["Mistlands"]
+  },
+  "valheim.biome.ashlands": {
+    "title": "Ashlands",
+    "short": "The scorching south: boiling water, lava and the Charred.",
+    "body": "In the Ashlands the water boils, and a single spark sets anything flammable alight. The Charred are [[valheim.damagemod.weak|weak]] to [[valheim.damage.spirit]] and [[valheim.damagemod.veryresistant|very resistant]] to [[valheim.damage.fire]]. To cross over you need a sturdier ship; ceramic plates from the [[valheim.station.artisanstation|Artisan Table]] insulate against the heat.\n\nFader waits here, see [[valheim.power.fader]].",
+    "aliases": ["Ashlands"]
+  },
+  "valheim.biome.deepnorth": {
+    "title": "Deep North",
+    "short": "The icy end of the journey; Kall Fimbulbringer rules here.",
+    "body": "The Deep North is the final trial on the way to Valhalla. Here rules Kall Fimbulbringer, whom the ancestors once tried to keep in chains. Expect [[valheim.status.cold|cold]] and bring protection against [[valheim.damage.frost]].",
+    "aliases": ["Deep North"]
+  },
+  "valheim.biome.ocean": {
+    "title": "Ocean",
+    "short": "The sea between the lands: crossable only by ship, home of the serpents.",
+    "body": "The lands of Valheim lie scattered across the Ocean; to go further, you need a ship. [[valheim.power.moder|Moder's power]] always gives you tailwind while sailing. Serpents attack boats; they are [[valheim.damagemod.immune|immune]] to [[valheim.damage.fire]] and [[valheim.damagemod.weak|weak]] to [[valheim.damage.frost]].\n\nIn the south the water boils in front of the [[valheim.biome.ashlands|Ashlands]].",
+    "aliases": ["Ocean"]
+  },
+
+  "valheim.station.overview": {
+    "title": "Crafting station",
+    "short": "Workbench, forge and co.: craft items, repair them and unlock building pieces.",
+    "body": "At a crafting station you craft items, [[valheim.item.repair|repair]] them and upgrade their [[valheim.item.quality|quality]]. Within its range you can build the matching building pieces.\n\n- **Station level:** every attached improvement nearby raises the level by 1 and usually extends the building range.\n- Most stations need a roof and enough cover; the [[valheim.station.cauldron|Cauldron]] and the [[valheim.station.meadcauldron|Mead Ketill]] need a fire underneath instead.\n\nStations: [[valheim.station.workbench]], [[valheim.station.forge]], [[valheim.station.cauldron]], [[valheim.station.stonecutter]], [[valheim.station.artisanstation]], [[valheim.station.blackforge]], [[valheim.station.magetable]], [[valheim.station.preptable]], [[valheim.station.meadcauldron]], [[valheim.station.upgradestation]].",
+    "aliases": ["Crafting station", "Station level", "Required station level"]
+  },
+  "valheim.station.workbench": {
+    "title": "Workbench",
+    "short": "The first station: wooden building pieces, tools, bows and leather and hide armour.",
+    "body": "Every base begins with a workbench. It unlocks wooden building pieces and crafts tools, bows, wooden shields and armour of leather and hide. Its building range is 20 metres and grows by 4 metres with each improvement.\n\nIt needs a roof. Improvements such as the Chopping Block or the Tanning Rack raise its [[valheim.station.overview|station level]].",
+    "aliases": ["Workbench"]
+  },
+  "valheim.station.forge": {
+    "title": "Forge",
+    "short": "Works metal into weapons, armour, tools and trinkets.",
+    "body": "To work with metal you need the forge: equipment of bronze, iron and silver, pickaxes and many [[valheim.item.trinket|trinkets]] are made here. The bars for it come from the smelter.\n\nIt needs a roof. Improvements such as the Forge Bellows and the Anvils raise its [[valheim.station.overview|station level]] and the building range by 3 metres each.",
+    "aliases": ["Forge"]
+  },
+  "valheim.station.cauldron": {
+    "title": "Cauldron",
+    "short": "Cooks dishes from several ingredients; needs a fire underneath.",
+    "body": "In the cauldron you prepare dishes from several ingredients. It needs a burning fire underneath, but no roof.\n\nImprovements such as the Spice Rack or the Butcher's Table raise its [[valheim.station.overview|station level]] for more demanding recipes. Here you train [[valheim.skill.cooking|Cooking]].",
+    "aliases": ["Cauldron"]
+  },
+  "valheim.station.stonecutter": {
+    "title": "Stonecutter",
+    "short": "Unlocks stone building pieces.",
+    "body": "If you want to build with stone, you need a stonecutter nearby. It unlocks stone building pieces and crafts the Sharpening Stone. It needs a roof; its building range is 20 metres.",
+    "aliases": ["Stonecutter"]
+  },
+  "valheim.station.artisanstation": {
+    "title": "Artisan Table",
+    "short": "For machinery and tricky pieces such as the windmill, the spinning wheel and ceramic plates.",
+    "body": "At the Artisan Table you make machinery and complicated parts, such as Mechanical Springs, Ceramic Plates, Shield Cores and missiles. It also unlocks building pieces such as the windmill and the spinning wheel. With 40 metres its building range is especially large; it needs a roof.",
+    "aliases": ["Artisan Table"]
+  },
+  "valheim.station.blackforge": {
+    "title": "Black Forge",
+    "short": "The advanced forge for equipment from the Mistlands onwards.",
+    "body": "Certain metals, especially combined with other materials, can only be worked at the Black Forge. Equipment from the [[valheim.biome.mistlands|Mistlands]] onwards is made here, along with some [[valheim.item.trinket|trinkets]]. It needs a roof; improvements such as the Black Forge Cooler and the Vice raise its [[valheim.station.overview|station level]].",
+    "aliases": ["Black Forge"]
+  },
+  "valheim.station.magetable": {
+    "title": "Galdr Table",
+    "short": "Crafts magic staffs, mage clothing and the Feather Cape.",
+    "body": "The Galdr Table makes the staffs of [[valheim.skill.elementalmagic|Elemental Magic]] and [[valheim.skill.bloodmagic|Blood Magic]], mage clothing and the Feather Cape. To cast spells you need [[valheim.stat.eitr|eitr]]. The table needs a roof; improvements such as the Rune Table raise its [[valheim.station.overview|station level]].",
+    "aliases": ["Galdr Table"]
+  },
+  "valheim.station.preptable": {
+    "title": "Food Preparation Table",
+    "short": "Prepares feasts, fishing bait and raw pies and dough for the oven.",
+    "body": "Not everything goes straight into the [[valheim.station.cauldron|Cauldron]]: at the Food Preparation Table you make feasts, fishing bait and raw pies and dough that you then bake in the oven. It needs a roof, and here you train [[valheim.skill.cooking|Cooking]].",
+    "aliases": ["Food Preparation Table"]
+  },
+  "valheim.station.meadcauldron": {
+    "title": "Mead Ketill",
+    "short": "Mixes mead bases that then mature in the fermenter.",
+    "body": "The Mead Ketill is a copper pot for mixing [[valheim.food.mead|mead]]: here you make the mead bases that you then let mature in the fermenter. It needs a burning fire underneath, but no roof. Here you train [[valheim.skill.cooking|Cooking]] as well.",
+    "aliases": ["Mead Ketill"]
+  },
+  "valheim.station.upgradestation": {
+    "title": "Forge of Potential",
+    "short": "Refines equipment beyond its normal maximum quality – at a risk.",
+    "body": "At the Forge of Potential you raise an item beyond its highest [[valheim.item.quality|quality]]. Besides the materials you need a matching idol. The refinement can succeed, set the item back by one level, or destroy it.\n\nIt needs neither a roof nor a fire.",
+    "aliases": ["Forge of Potential", "Refinement", "Idol"]
+  },
+
+  "valheim.item.quality": {
+    "title": "Quality",
+    "short": "An item's upgrade level: each level improves damage, armour, block and durability.",
+    "body": "You upgrade equipment at its [[valheim.station.overview|crafting station]]. Depending on the item, each level raises damage, [[valheim.combat.armor|armour]], [[valheim.combat.blockpower|block armour]] and [[valheim.item.durability|durability]]; the upgraded item is fully repaired.\n\nEach level needs materials again and a [[valheim.station.overview|station level]] one higher. Beyond the max quality you can only go at the [[valheim.station.upgradestation]].",
+    "aliases": ["Quality", "Max quality", "Upgrade"]
+  },
+  "valheim.item.durability": {
+    "title": "Durability",
+    "short": "Wears down with use; at 0 the item is unequipped until you repair it.",
+    "body": "Weapons and tools lose durability with every use, shields when blocking, armour when you are hit, and some items such as torches just by being worn. When it reaches 0, the item is unequipped and can only be equipped again after a [[valheim.item.repair|repair]]; some fall apart completely.\n\nHigher [[valheim.item.quality|quality]] raises the maximum durability. When it is used up, the bar in the inventory flashes red.",
+    "aliases": ["Durability"]
+  },
+  "valheim.item.repair": {
+    "title": "Repair",
+    "short": "Restores durability for free – at the right station with a high enough station level.",
+    "body": "When you stand at a [[valheim.station.overview|crafting station]], the repair button in the crafting window repairs one worn item after another, without any materials. It has to be the station where the item is crafted, and its station level must reach the repair station level shown in the tooltip.\n\nRepairing trains [[valheim.skill.crafting|Crafting]].",
+    "aliases": ["Repair", "Repair station level", "Repaired"]
+  },
+  "valheim.item.trinket": {
+    "title": "Trinket",
+    "short": "Its own equipment slot; gathers adrenaline and triggers its effect when the bar is full.",
+    "body": "You wear a trinket in its own slot. It gives you an [[valheim.combat.adrenaline|adrenaline]] bar whose size the tooltip shows under “Adrenaline”. When the bar is full, the trinket's “Adrenaline effect” kicks in, for example a burst of regeneration or more damage for a short time.\n\nYou craft trinkets at the [[valheim.station.forge|Forge]] or the [[valheim.station.blackforge|Black Forge]].",
+    "aliases": ["Trinket", "Trinkets"]
+  },
+  "valheim.item.noteleport": {
+    "title": "Can't be teleported",
+    "short": "With this item in your inventory you cannot use a normal portal.",
+    "body": "Ores, metals and some other valuable things cannot be taken through a portal. If you carry such an item, the portal refuses to let you through; you have to bring the load by ship or on foot.\n\nAccording to its description, the stone portal lets you through even with the most valuable items. A world setting can also lift the restriction entirely.",
+    "aliases": ["Can't be teleported"]
+  },
+  "valheim.item.seteffect": {
+    "title": "Set effect",
+    "short": "An extra effect when you wear enough pieces of the same armour set.",
+    "body": "Some armour belongs to a set. If you wear the number of pieces named in the tooltip at the same time, the set effect applies. The wolf armour, for example, makes you [[valheim.damagemod.resistant|resistant]] to [[valheim.damage.frost]], the troll armour improves [[valheim.skill.sneak|Sneak]].",
+    "aliases": ["Set effect"]
+  },
+
+  "valheim.power.overview": {
+    "title": "Forsaken power",
+    "short": "Boss defeated, trophy sacrificed: a power you trigger with F for five minutes.",
+    "body": "Once you have defeated one of the Forsaken, hang its trophy at the Sacrificial Stones. Then choose its power there with “Activate power”; only one power is selected at a time.\n\nPress `F` (default key) to trigger it: it lasts five minutes, after which you have to wait 20 minutes. Triggering it also gives you some [[valheim.combat.adrenaline|adrenaline]].\n\nPowers: [[valheim.power.eikthyr]], [[valheim.power.theelder]], [[valheim.power.bonemass]], [[valheim.power.moder]], [[valheim.power.yagluth]], [[valheim.power.queen]], [[valheim.power.fader]].",
+    "aliases": ["Forsaken power", "Forsaken"]
+  },
+  "valheim.power.eikthyr": {
+    "title": "Eikthyr's power",
+    "short": "For five minutes, 60 % less stamina for running, jumping and swimming.",
+    "body": "Eikthyr is the first of the [[valheim.power.overview|Forsaken]] and rules the [[valheim.biome.meadows|Meadows]]. His power lowers the [[valheim.stat.stamina|stamina]] cost of running, jumping and swimming by 60 % – good for long journeys.",
+    "aliases": ["Eikthyr"]
+  },
+  "valheim.power.theelder": {
+    "title": "The Elder's power",
+    "short": "For five minutes, 60 % more damage against trees and stone, plus better healing.",
+    "body": "The Elder rules the [[valheim.biome.blackforest|Black Forest]]. His power raises [[valheim.damage.chop]] and [[valheim.damage.pickaxe|pickaxe]] damage by 60 % and your health [[valheim.stat.regen|regeneration]] by 30 % – good for felling trees and mining.",
+    "note": "No alias “The Elder”: it would also hit “The elder brother” (trophy lore)."
+  },
+  "valheim.power.bonemass": {
+    "title": "Bonemass's power",
+    "short": "For five minutes, slightly resistant to physical damage; blocking costs no stamina.",
+    "body": "Bonemass rules the [[valheim.biome.swamp|Swamp]]. His power makes you [[valheim.damagemod.slightlyresistant|slightly resistant]] to [[valheim.damage.blunt]], [[valheim.damage.slash]] and [[valheim.damage.pierce]]. Meanwhile [[valheim.combat.block|blocking]] costs no stamina and even gives you a little back.",
+    "aliases": ["Bonemass"]
+  },
+  "valheim.power.moder": {
+    "title": "Moder's power",
+    "short": "For five minutes, tailwind when sailing, frost resistance, more carry weight and speed.",
+    "body": "Moder rules the [[valheim.biome.mountain|Mountain]]. Her power always gives you tailwind while sailing, makes you [[valheim.damagemod.resistant|resistant]] to [[valheim.damage.frost]], raises your [[valheim.stat.carryweight|carry weight]] by 300 and your movement speed by 10 %.",
+    "aliases": ["Moder"]
+  },
+  "valheim.power.yagluth": {
+    "title": "Yagluth's power",
+    "short": "For five minutes, 10 % more damage, lightning resistance and 25 more levels of Farming.",
+    "body": "Yagluth rules the [[valheim.biome.plains|Plains]]. His power raises your damage of all [[valheim.damage.overview|damage types]] by 10 %, makes you [[valheim.damagemod.resistant|resistant]] to [[valheim.damage.lightning]] and raises [[valheim.skill.farming|Farming]] by 25 levels.",
+    "aliases": ["Yagluth"]
+  },
+  "valheim.power.queen": {
+    "title": "The Queen's power",
+    "short": "For five minutes, double eitr regeneration, poison resistance and sneaking without stamina.",
+    "body": "The Queen rules the [[valheim.biome.mistlands|Mistlands]]. Her power doubles your [[valheim.stat.eitr|eitr]] regeneration, makes you [[valheim.damagemod.resistant|resistant]] to [[valheim.damage.poison]] and lets you [[valheim.skill.sneak|sneak]] without using stamina.",
+    "note": "No alias “The Queen”: it would also hit “The queen of the bees!” (Queen Bee description)."
+  },
+  "valheim.power.fader": {
+    "title": "Fader's power",
+    "short": "For five minutes, twice the adrenaline, more stagger resistance and fire resistance.",
+    "body": "Fader rules the [[valheim.biome.ashlands|Ashlands]]. His power doubles the [[valheim.combat.adrenaline|adrenaline]] you gather, raises your resistance to [[valheim.combat.stagger|stagger]] by 50 % and makes you [[valheim.damagemod.resistant|resistant]] to [[valheim.damage.fire]].",
+    "aliases": ["Fader"]
+  },
+
+  "valheim.tame.taming": {
+    "title": "Taming",
+    "short": "Feed a wild animal and do not scare it – after a while it is tame.",
+    "body": "Among the animals you can tame are boars, wolves, lox, moose and asksvin. Put out suitable food: once the animal has eaten, it stays fed for ten minutes, and only while fed and unafraid does its tameness grow. It needs 30 such minutes in total; if someone under the effect of the Brew of Animal Whispers is within 60 metres, it goes twice as fast.\n\nWolves follow you on command; with a saddle you [[valheim.skill.ride|ride]] lox, asksvin and moose. Fed, tame animals breed, see [[valheim.tame.breeding]].",
+    "aliases": ["Tame", "tamed", "Tameness"]
+  },
+  "valheim.tame.breeding": {
+    "title": "Breeding",
+    "short": "Fed, tame animals with a partner nearby have offspring – until it gets too crowded.",
+    "body": "Tamed animals breed on their own when they are fed and undisturbed and a partner of their kind is nearby. Over time they gather affection; once there is enough, the animal becomes pregnant and soon has a young one that is [[valheim.tame.taming|tame]] from the start.\n\n- The young one takes over its mother's level (stars).\n- If too many animals of the kind stand close together, no more offspring are born.\n\nOne star means double health and 50 % more damage, two stars triple health and double damage."
+  }
+}

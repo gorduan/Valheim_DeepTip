@@ -1,0 +1,772 @@
+{
+  "$schema": "../../schema/deeptip.schema.json",
+  "$locale": "de",
+  "$comment": "DeepTip-Glossar für Valheim 1.0.20. Aliase entsprechen den deutschen Spieltexten (Lokalisierung 1.0.20). Zahlen sind gegen den dekompilierten Spielcode und die Spieldaten 1.0.20 geprüft.",
+  "$ui": {
+    "close": "Schließen",
+    "pin": "Festhalten",
+    "unpin": "Loslassen",
+    "missing": "Zu diesem Begriff gibt es noch keine Erklärung.",
+    "fallback": "Noch nicht übersetzt",
+    "hint": "Klick hält fest · Esc schließt",
+    "seeAlso": "Siehe auch:",
+    "search": "Begriffe suchen …",
+    "mentionedIn": "Erwähnt in",
+    "empty": "Keine Treffer."
+  },
+
+  "deeptip.about": {
+    "title": "DeepTip",
+    "short": "Erklärfenster mit Tiefe: markierte Begriffe öffnen weitere Erklärungen.",
+    "body": "DeepTip erklärt, was du in Valheim siehst. Lass die Maus kurz auf einem Inventarplatz, einer Fertigkeit oder einem Knopf ruhen, dann öffnet sich daneben ein Fenster. Farbig markierte [[deeptip.term|Begriffe]] darin öffnen beim Drüberfahren ein weiteres Fenster, ein Klick [[deeptip.pin|hält es fest]]. So liest du so tief nach, wie du willst.\n\nBedienung: [[deeptip.mouse|Maus]] und [[deeptip.keyboard|Tastatur]]. Alle Einträge findest du im [[deeptip.lexicon|Lexikon]].",
+    "note": "Diese Version unterstützt nur Maus und Tastatur (kein Touch, kein Controller)."
+  },
+  "deeptip.term": {
+    "title": "Markierter Begriff",
+    "short": "Hat einen eigenen Eintrag – drüberfahren zeigt ihn.",
+    "body": "Ein markierter Begriff hat einen eigenen Eintrag. Fahr mit der Maus darauf, dann erscheint er als Vorschau neben dem Fenster; fährst du weg, verschwindet sie wieder. Ein Klick [[deeptip.pin|hält]] das Fenster fest.\n\nIn den Tooltips von Valheim und anderen Mods markiert DeepTip bekannte Begriffe von selbst, jeweils beim ersten Vorkommen im Fenster. Das lässt sich in den Einstellungen abschalten."
+  },
+  "deeptip.pin": {
+    "title": "Festhalten",
+    "short": "Ein festgehaltenes Fenster bleibt offen, bis du es schließt.",
+    "body": "Ein festgehaltenes Fenster bleibt offen, bis du es mit dem X oder mit `Esc` schließt. Festhalten kannst du es mit einem Klick auf einen [[deeptip.term|Begriff]] oder auf die Nadel.\n\nAuf Wunsch hält DeepTip eine Vorschau auch fest, wenn die Maus eine Weile darin ruht (Zeitsperre in den Einstellungen, anfangs aus).\n\nAlle Fenster auf einmal schließt `Umschalt+Esc`."
+  },
+  "deeptip.mouse": {
+    "title": "Bedienung mit der Maus",
+    "short": "Ruhen lassen öffnet, Klick hält fest.",
+    "body": "- Lass die Maus eine halbe Sekunde auf einem Inventarplatz, einer Fertigkeit oder einem Knopf ruhen: Das Fenster öffnet sich daneben. Auch Valheims eigene Tooltips sind solche Fenster, du kannst mit der Maus hineinfahren.\n- Fahr über einen [[deeptip.term|Begriff]]: Seine Vorschau erscheint.\n- Klick auf einen Begriff oder auf die Nadel: [[deeptip.pin|festhalten]].\n- Das X schließt ein Fenster."
+  },
+  "deeptip.keyboard": {
+    "title": "Bedienung mit der Tastatur",
+    "short": "F1 öffnet, Esc schließt.",
+    "body": "- `F1` öffnet das Fenster für das Element unter der Maus, gleich [[deeptip.pin|festgehalten]].\n- `Esc` schließt das neueste Fenster. Erst wenn keins mehr offen ist, reagieren Valheims Menüs wieder auf `Esc`.\n- `Umschalt+Esc` schließt alle Fenster."
+  },
+  "deeptip.lexicon": {
+    "title": "Lexikon",
+    "short": "Alle Einträge auf einer Seite im Valheim-Kompendium, mit Suche.",
+    "body": "Das Lexikon ist eine Seite im Valheim-Kompendium. Es listet alle Einträge mit ihrer Kurzbeschreibung, und über das Suchfeld findest du einen Begriff schnell. Bei jedem Eintrag steht, in welchen anderen Einträgen er erwähnt wird.\n\nVom Lexikon aus geht es weiter wie überall: [[deeptip.term|Begriffe]] öffnen eine Vorschau, ein Klick [[deeptip.pin|hält sie fest]]."
+  },
+
+  "valheim.damage.overview": {
+    "title": "Schadensarten",
+    "short": "Ein Treffer kann mehrere Schadensarten enthalten; jede wird einzeln mit den Widerständen des Ziels verrechnet.",
+    "body": "Ein Treffer setzt sich aus einer oder mehreren Schadensarten zusammen. Jede Art wird einzeln mit dem [[valheim.damagemod.overview|Schadensmultiplikator]] des Ziels verrechnet; danach zieht bei dir als Spieler die [[valheim.combat.armor|Rüstung]] ab.\n\n- **Physisch:** [[valheim.damage.blunt]], [[valheim.damage.slash]], [[valheim.damage.pierce]]\n- **Elementar:** [[valheim.damage.fire]], [[valheim.damage.frost|Eis]], [[valheim.damage.lightning]]\n- **Weitere:** [[valheim.damage.poison]], [[valheim.damage.spirit]]\n- **Werkzeuge:** [[valheim.damage.chop]], [[valheim.damage.pickaxe|Spitzhacke]]\n\nDie gelbe Spanne hinter einem Schadenswert zeigt, was du mit deiner aktuellen [[valheim.skill.overview|Fertigkeit]] tatsächlich triffst.",
+    "see": ["valheim.combat.stagger"],
+    "note": "Physisch = Hauen+Schlitzen+Stechen (HitData.GetTotalPhysicalDamage), Elementar = Feuer+Eis+Blitz."
+  },
+  "valheim.damage.blunt": {
+    "title": "Hauen",
+    "short": "Stumpfer physischer Schaden, typisch für Schlagwaffen.",
+    "body": "Hauen ist stumpfer [[valheim.damage.overview|physischer Schaden]]. Er zählt voll für das [[valheim.combat.stagger|Taumeln]] und wird von [[valheim.combat.armor|Rüstung]] und [[valheim.combat.blockpower|Blockrüstung]] gemindert.\n\nSkelette und Schleimlinge sind [[valheim.damagemod.weak|schwach]] gegen Hauen, Trolle dagegen [[valheim.damagemod.resistant|resistent]].",
+    "aliases": ["Hauen"],
+    "see": ["valheim.skill.clubs"]
+  },
+  "valheim.damage.slash": {
+    "title": "Schlitzen",
+    "short": "Schneidender physischer Schaden, typisch für Schwerter, Äxte und Messer.",
+    "body": "Schlitzen ist schneidender [[valheim.damage.overview|physischer Schaden]]. Er zählt voll für das [[valheim.combat.stagger|Taumeln]] und wird von [[valheim.combat.armor|Rüstung]] und [[valheim.combat.blockpower|Blockrüstung]] gemindert.\n\nSteingolems und Schleimlinge sind [[valheim.damagemod.resistant|resistent]] gegen Schlitzen.",
+    "aliases": ["Schlitzen"],
+    "see": ["valheim.skill.swords", "valheim.skill.axes"]
+  },
+  "valheim.damage.pierce": {
+    "title": "Stechen",
+    "short": "Durchbohrender physischer Schaden, typisch für Speere, Atgeire, Pfeile und Bolzen.",
+    "body": "Stechen ist durchbohrender [[valheim.damage.overview|physischer Schaden]]. Er zählt voll für das [[valheim.combat.stagger|Taumeln]] und wird von [[valheim.combat.armor|Rüstung]] und [[valheim.combat.blockpower|Blockrüstung]] gemindert.\n\nTrolle und Zecken sind [[valheim.damagemod.weak|schwach]] gegen Stechen, Skelette [[valheim.damagemod.resistant|resistent]] und die Monstrosität sogar [[valheim.damagemod.veryresistant|sehr resistent]].",
+    "aliases": ["Stechen"],
+    "see": ["valheim.skill.spears", "valheim.skill.bows"]
+  },
+  "valheim.damage.chop": {
+    "title": "Hacken",
+    "short": "Werkzeugschaden von Äxten gegen Bäume und Stämme.",
+    "body": "Hacken ist der Schaden, mit dem Äxte Bäume und Baumstämme fällen. Ist die Stufe des Werkzeugs zu niedrig für einen Baum, erscheint „Zu stabil“.\n\nDie meisten Kreaturen ignorieren Hacken, du als Spieler bist [[valheim.damagemod.immune|immun]]. Beim Treffer auf Bäume zählt die Fertigkeit [[valheim.skill.woodcutting]].",
+    "aliases": ["Hacken"],
+    "see": ["valheim.damage.pickaxe", "valheim.power.theelder"]
+  },
+  "valheim.damage.pickaxe": {
+    "title": "Spitzhacke (Schadensart)",
+    "short": "Werkzeugschaden gegen Felsen, Gestein und Erz.",
+    "body": "Diesen Schaden verursachen Spitzhacken. Er baut Felsen, Gestein und Erzadern ab; ist die Stufe des Werkzeugs zu niedrig, erscheint „Zu stabil“.\n\nDie meisten Kreaturen ignorieren ihn, du als Spieler bist [[valheim.damagemod.immune|immun]]. Steingolems sind dagegen [[valheim.damagemod.veryweak|sehr schwach]]. Abbauen trainiert [[valheim.skill.pickaxes]].",
+    "aliases": ["Spitzhacke"],
+    "see": ["valheim.damage.chop", "valheim.power.theelder"]
+  },
+  "valheim.damage.fire": {
+    "title": "Feuer",
+    "short": "Elementarschaden, der als Brennen über einige Sekunden wirkt.",
+    "body": "Feuerschaden wird nicht sofort abgezogen, sondern als [[valheim.status.burning]] über einige Sekunden verteilt. Bist du [[valheim.status.wet|nass]], erlischt das Brennen schneller, und du bist [[valheim.damagemod.resistant|resistent]] gegen Feuer.\n\nGrauzwerge und der Uralte sind [[valheim.damagemod.veryweak|sehr schwach]] gegen Feuer, Skelette und Lox [[valheim.damagemod.weak|schwach]]. Surtlinge, Schlundegel und Seeschlangen sind [[valheim.damagemod.immune|immun]].",
+    "aliases": ["Feuer"],
+    "see": ["valheim.damage.overview"]
+  },
+  "valheim.damage.frost": {
+    "title": "Eis (Frost)",
+    "short": "Elementarschaden, der sofort trifft und das Ziel verlangsamt.",
+    "body": "Eis trifft sofort und verlangsamt das Ziel. Je höher der Schaden im Verhältnis zur maximalen Gesundheit, desto länger hält die Verlangsamung; am Anfang ist sie am stärksten.\n\nBist du gegen Eis [[valheim.damagemod.resistant|resistent]], wirst du nicht verlangsamt und spürst weder [[valheim.status.cold|Kälte]] noch [[valheim.status.freezing|Erfrieren]]. Bist du [[valheim.status.wet|nass]], bist du [[valheim.damagemod.weak|schwach]] gegen Eis.",
+    "aliases": ["Frostwiderstand", "Unterkühlung"],
+    "see": ["valheim.biome.mountain"],
+    "note": "Der Spieltext heißt nur „Eis“ (3 Zeichen, zu kurz als Alias). Aliase: Set-Bonus „Frostwiderstand“ und Zustandstext „Unterkühlung“."
+  },
+  "valheim.damage.lightning": {
+    "title": "Blitz",
+    "short": "Elementarschaden, der sofort trifft und beim Taumeln mitzählt.",
+    "body": "Blitzschaden wird sofort abgezogen und zählt wie physischer Schaden für das [[valheim.combat.stagger|Taumeln]]. Bist du [[valheim.status.wet|nass]], bist du [[valheim.damagemod.weak|schwach]] gegen Blitz.\n\nMorgen sind schwach gegen Blitz. Die Kraft von [[valheim.power.yagluth|Yagluth]] macht dich [[valheim.damagemod.resistant|resistent]].",
+    "aliases": ["Blitz", "Blitzschaden"]
+  },
+  "valheim.damage.poison": {
+    "title": "Gift",
+    "short": "Schaden über Zeit; je stärker die Vergiftung, desto länger hält sie.",
+    "body": "Giftschaden wird über mehrere Sekunden verteilt, siehe [[valheim.status.poison]]. Eine schwächere Vergiftung ersetzt keine stärkere, die noch läuft.\n\nUntote wie Skelette und Draugr sind [[valheim.damagemod.immune|immun]], Grauzwerge [[valheim.damagemod.resistant|resistent]]. Der Met des Giftwiderstands macht dich [[valheim.damagemod.veryresistant|sehr resistent]].",
+    "aliases": ["Gift", "Giftschaden"]
+  },
+  "valheim.damage.spirit": {
+    "title": "Geist",
+    "short": "Schaden, der vor allem Untote trifft; Lebende und Spieler bleiben meist unberührt.",
+    "body": "Geistschaden wirkt über wenige Sekunden. Die meisten lebenden Kreaturen sind [[valheim.damagemod.immune|immun]], du als Spieler ebenfalls.\n\nSkelette und Draugr nehmen ihn voll, Geister, Verkohlte und Gefallene Walküren sind sogar [[valheim.damagemod.weak|schwach]] dagegen.",
+    "aliases": ["Geist"],
+    "note": "„Geist“ ist im Spiel auch der Name eines Gegners (Ghost). Falls das stört, Alias entfernen."
+  },
+
+  "valheim.damagemod.overview": {
+    "title": "Schadensmultiplikator",
+    "short": "Wie stark eine Schadensart bei einem Ziel wirkt – von immun bis sehr schwach.",
+    "body": "Jedes Wesen hat für jede [[valheim.damage.overview|Schadensart]] einen Multiplikator. Ausrüstung, Met und Kräfte können ihn verändern; der Tooltip zeigt ihn als „Schadensmultiplikator: … VS …“.\n\n- [[valheim.damagemod.immune]]: kein Schaden\n- [[valheim.damagemod.veryresistant]]: ×0,25\n- [[valheim.damagemod.resistant]]: ×0,5\n- [[valheim.damagemod.slightlyresistant]]: ×0,75\n- [[valheim.damagemod.slightlyweak]]: ×1,25\n- [[valheim.damagemod.weak]]: ×1,5\n- [[valheim.damagemod.veryweak]]: ×2\n\nMehrere Quellen addieren sich nicht, es gilt je Art ein Wert: Resistenzen verdrängen Schwächen, stärkere Resistenzen schwächere, und Immunität verdrängt beides.",
+    "aliases": ["Schadensmultiplikator"]
+  },
+  "valheim.damagemod.immune": {
+    "title": "Immun",
+    "short": "Diese Schadensart richtet gar keinen Schaden an.",
+    "body": "Gegen eine Schadensart, gegen die ein Ziel immun ist, richtest du nichts aus. Ist ein Wesen gegen Feuer, Eis, Blitz oder Gift immun, startet auch der passende Zustand wie [[valheim.status.burning]] nicht.\n\nImmunität verdrängt jeden anderen [[valheim.damagemod.overview|Schadensmultiplikator]].",
+    "aliases": ["Immun"]
+  },
+  "valheim.damagemod.veryresistant": {
+    "title": "Sehr resistent",
+    "short": "Nur ein Viertel des Schadens dieser Art kommt an (×0,25).",
+    "body": "Ein sehr resistentes Ziel nimmt nur 25 % des Schadens dieser [[valheim.damage.overview|Schadensart]]. Der Met des Giftwiderstands macht dich zum Beispiel sehr resistent gegen [[valheim.damage.poison]], die Monstrosität ist es gegen [[valheim.damage.pierce]].\n\nEine schwächere [[valheim.damagemod.resistant|Resistenz]] kann diesen Wert nicht verdrängen.",
+    "aliases": ["Sehr resistent"]
+  },
+  "valheim.damagemod.resistant": {
+    "title": "Resistent",
+    "short": "Nur die Hälfte des Schadens dieser Art kommt an (×0,5).",
+    "body": "Ein resistentes Ziel nimmt nur 50 % des Schadens dieser [[valheim.damage.overview|Schadensart]]. Trolle sind zum Beispiel resistent gegen [[valheim.damage.blunt]], Draugr gegen [[valheim.damage.fire]].\n\nEine Resistenz verhindert eine Schwäche derselben Art. Resistenz gegen [[valheim.damage.frost|Eis]] schützt dich außerdem vor [[valheim.status.cold|Kälte]].",
+    "aliases": ["Resistent"]
+  },
+  "valheim.damagemod.slightlyresistant": {
+    "title": "Leicht resistent",
+    "short": "Drei Viertel des Schadens dieser Art kommen an (×0,75).",
+    "body": "Ein leicht resistentes Ziel nimmt 75 % des Schadens dieser [[valheim.damage.overview|Schadensart]]. Die Kraft von [[valheim.power.bonemass|Knochenwanst]] macht dich zum Beispiel leicht resistent gegen [[valheim.damage.blunt]], [[valheim.damage.slash]] und [[valheim.damage.pierce]].\n\nAuch eine leichte Resistenz verhindert eine Schwäche derselben Art.",
+    "aliases": ["Leicht resistent"]
+  },
+  "valheim.damagemod.slightlyweak": {
+    "title": "Leicht schwach",
+    "short": "Ein Viertel mehr Schaden dieser Art (×1,25).",
+    "body": "Ein leicht schwaches Ziel nimmt 125 % des Schadens dieser [[valheim.damage.overview|Schadensart]]. Jede [[valheim.damagemod.resistant|Resistenz]] gegen dieselbe Art hebt die Schwäche auf.",
+    "aliases": ["Leicht schwach"]
+  },
+  "valheim.damagemod.weak": {
+    "title": "Schwach",
+    "short": "Die Hälfte mehr Schaden dieser Art (×1,5).",
+    "body": "Ein schwaches Ziel nimmt 150 % des Schadens dieser [[valheim.damage.overview|Schadensart]]. Skelette sind schwach gegen [[valheim.damage.blunt]], Trolle gegen [[valheim.damage.pierce]].\n\nAuch du kannst schwach werden: Bist du [[valheim.status.wet|nass]], bist du schwach gegen [[valheim.damage.frost|Eis]] und [[valheim.damage.lightning]].",
+    "aliases": ["Schwach"]
+  },
+  "valheim.damagemod.veryweak": {
+    "title": "Sehr schwach",
+    "short": "Doppelter Schaden dieser Art (×2).",
+    "body": "Ein sehr schwaches Ziel nimmt den doppelten Schaden dieser [[valheim.damage.overview|Schadensart]]. Grauzwerge sind sehr schwach gegen [[valheim.damage.fire]], Steingolems gegen den Schaden von [[valheim.damage.pickaxe|Spitzhacken]].\n\nBist du [[valheim.status.tared|geteert]], bist du sehr schwach gegen Feuer.",
+    "aliases": ["Sehr schwach"]
+  },
+
+  "valheim.combat.armor": {
+    "title": "Rüstung",
+    "short": "Zieht Schaden ab; je höher die Rüstung im Verhältnis zum Treffer, desto stärker schützt sie.",
+    "body": "Deine Rüstung ist die Summe aus Helm, Brust, Beinen und Umhang. Sie wirkt nach dem [[valheim.damagemod.overview|Schadensmultiplikator]] auf alle [[valheim.damage.overview|Schadensarten]] außer Hacken und Spitzhacke.\n\n- Ist die Rüstung höchstens halb so groß wie der Schaden, zieht sie einfach ihren Wert ab.\n- Ist sie größer, sinkt der Schaden immer stärker, erreicht aber nie null.\n\nJeder Treffer kostet ein zufälliges Rüstungsteil [[valheim.item.durability|Haltbarkeit]]. Höhere [[valheim.item.quality|Qualität]] erhöht den Rüstungswert.",
+    "aliases": ["Rüstung"],
+    "see": ["valheim.combat.blockpower"],
+    "note": "HitData.ApplyArmor: Schaden < 2·Rüstung → Schaden²/(4·Rüstung), sonst Schaden − Rüstung."
+  },
+  "valheim.combat.block": {
+    "title": "Blocken",
+    "short": "Mit Schild oder Waffe Treffer von vorn abfangen; kostet Ausdauer.",
+    "body": "Beim Blocken fängst du Treffer von vorn mit Schild oder Waffe ab. Der Block wirkt wie [[valheim.combat.armor|Rüstung]] mit dem Wert deiner [[valheim.combat.blockpower|Blockrüstung]] und kostet [[valheim.stat.stamina|Ausdauer]] – je mehr Schaden er abfängt, desto mehr.\n\nReicht die Ausdauer nicht oder gerätst du ins [[valheim.combat.stagger|Taumeln]], geht der ganze Treffer durch. [[valheim.status.encumbered|Überladen]] kannst du nicht blocken. Fängst du einen Treffer direkt nach dem Hochnehmen ab, [[valheim.combat.parry|parierst]] du.",
+    "aliases": ["Blocken"],
+    "see": ["valheim.skill.blocking", "valheim.combat.blockforce"],
+    "note": "Ausdauerkosten: 10 × (abgefangener Schaden / Blockrüstung), höchstens 10, vor Modifikatoren."
+  },
+  "valheim.combat.blockpower": {
+    "title": "Blockrüstung",
+    "short": "Wie viel Schaden ein Block abfängt; der gelbe Wert enthält schon deine Fertigkeit Blocken.",
+    "body": "Die Blockrüstung ist der Rüstungswert deines [[valheim.combat.block|Blocks]]. Der erste Wert im Tooltip gilt für den Gegenstand, der gelbe in Klammern mit deiner Fertigkeit [[valheim.skill.blocking|Blocken]] – auf Stufe 100 sind es 50 % mehr.\n\nBeim [[valheim.combat.parry|Parieren]] wird die Blockrüstung mit dem [[valheim.combat.parrybonus|Parierbonus]] multipliziert. Höhere [[valheim.item.quality|Qualität]] erhöht den Grundwert.",
+    "aliases": ["Blockrüstung", "Blockwert"]
+  },
+  "valheim.combat.blockforce": {
+    "title": "Blockmacht",
+    "short": "Wie weit ein erfolgreicher Block einen Nahkämpfer zurückstößt.",
+    "body": "Fängst du einen Nahkampftreffer erfolgreich ab, stößt die Blockmacht den Angreifer zurück. Je mehr der Treffer von deiner [[valheim.combat.blockpower|Blockrüstung]] beansprucht hat, desto schwächer fällt der Stoß aus. Fernkämpfer werden nicht zurückgestoßen.\n\nAuch der [[valheim.combat.knockback|Rückstoß]], den du selbst einsteckst, ist beim [[valheim.combat.block|Blocken]] kleiner.",
+    "aliases": ["Blockmacht", "Parierstärke"]
+  },
+  "valheim.combat.parry": {
+    "title": "Parieren",
+    "short": "Block in der ersten Viertelsekunde: mehr Blockrüstung, keine Ausdauer, und der Angreifer taumelt.",
+    "body": "Triffst du einen Angriff in der ersten Viertelsekunde nach dem Hochnehmen des [[valheim.combat.block|Blocks]], parierst du. Das geht nur mit Gegenständen, die einen [[valheim.combat.parrybonus|Parierbonus]] haben – Turmschilde haben keinen.\n\n- Die [[valheim.combat.blockpower|Blockrüstung]] wird mit dem Parierbonus multipliziert.\n- Die Parade kostet keine [[valheim.stat.stamina|Ausdauer]].\n- Der Angreifer gerät ins [[valheim.combat.stagger|Taumeln]], wenn er taumeln kann; viele Bosse können es nicht.\n- Du bekommst [[valheim.combat.adrenaline|Adrenalin]], und [[valheim.skill.blocking|Blocken]] steigt doppelt so schnell.",
+    "aliases": ["pariert", "parieren", "parierst", "Parade"]
+  },
+  "valheim.combat.parrybonus": {
+    "title": "Parierbonus",
+    "short": "Faktor, mit dem eine Parade deine Blockrüstung vervielfacht.",
+    "body": "Der Parierbonus steht im Tooltip als Faktor. Beim [[valheim.combat.parry|Parieren]] wird deine [[valheim.combat.blockpower|Blockrüstung]] damit multipliziert. Faustschilde haben 2,5, die meisten anderen Schilde 1,5; Gegenstände ohne Parierbonus, etwa Turmschilde, können nicht parieren.\n\nManche Effekte erhöhen den Parierbonus zusätzlich um einen Prozentwert.",
+    "aliases": ["Parierbonus"]
+  },
+  "valheim.combat.stagger": {
+    "title": "Taumeln",
+    "short": "Zu viel Wucht in kurzer Zeit wirft dich oder den Gegner kurz aus dem Tritt.",
+    "body": "Physischer Schaden und [[valheim.damage.lightning|Blitz]] füllen eine Taumelleiste. Ist sie voll, taumelt das Ziel kurz und kann nicht angreifen; ohne neue Treffer leert sie sich innerhalb von fünf Sekunden. Deine Grenze liegt bei 40 % deiner maximalen [[valheim.stat.health|Gesundheit]] – mehr Gesundheit durch [[valheim.food.food|Essen]] hält also mehr aus.\n\n- Taumelnde Gegner nehmen doppelten Schaden.\n- Beim [[valheim.combat.block|Blocken]] füllt der Teil, der durchkommt, deine Leiste.\n- Eine [[valheim.combat.parry|Parade]] lässt den Angreifer taumeln.",
+    "aliases": ["Taumeln", "Taumelwiderstand"],
+    "see": ["valheim.power.fader"]
+  },
+  "valheim.combat.backstab": {
+    "title": "Hinterhältigkeit",
+    "short": "Schadensfaktor für Treffer gegen Gegner, die dich noch nicht bemerkt haben.",
+    "body": "Triffst du einen Gegner, der dich noch nicht bemerkt hat, wird der ganze Treffer mit diesem Faktor multipliziert – im Tooltip etwa „6x“ bei Messern. Danach ist derselbe Gegner fünf Minuten lang vor einem weiteren solchen Angriff sicher.\n\nAm besten gelingt das beim [[valheim.skill.sneak|Schleichen]].",
+    "aliases": ["Hinterhältigkeit"],
+    "see": ["valheim.skill.knives"]
+  },
+  "valheim.combat.knockback": {
+    "title": "Rückstoß",
+    "short": "Wie weit ein Treffer das Ziel wegstößt.",
+    "body": "Der Rückstoß einer Waffe schiebt getroffene Ziele weg. Er schwankt wie der Schaden mit deiner [[valheim.skill.overview|Fertigkeit]]. Schwere Wesen werden weniger weit gestoßen.\n\nSchwere Ausrüstung mit negativem [[valheim.item.movement|Bewegungstempo]] dämpft den Rückstoß, den du selbst einsteckst.",
+    "aliases": ["Rückstoß"]
+  },
+  "valheim.combat.adrenaline": {
+    "title": "Adrenalin",
+    "short": "Füllt sich im Kampf, wenn du ein Schmuckstück trägst; ist es voll, wirkt dessen Effekt.",
+    "body": "Adrenalin sammelst du nur mit einem [[valheim.item.trinket|Schmuckstück]], denn erst dieses legt fest, wie viel in die Leiste passt. Sie füllt sich durch Treffer, [[valheim.combat.block|Blocks]], [[valheim.combat.parry|Paraden]], gelungenes [[valheim.skill.dodge|Ausweichen]], das [[valheim.combat.stagger|Taumeln]] von Gegnern und das Auslösen einer [[valheim.power.overview|Verlassenen-Kraft]]. Ohne Nachschub sinkt sie langsam wieder.\n\nIst sie voll, wirkt der Adrenalineffekt des Schmuckstücks, und die Leiste beginnt von vorn.",
+    "aliases": ["Adrenalin", "Adrenalinrausch", "Adrenalineffekt", "Parade-Adrenalin"]
+  },
+
+  "valheim.stat.health": {
+    "title": "Gesundheit",
+    "short": "Deine Lebenspunkte: 25 als Grundwert, alles Weitere kommt vom Essen.",
+    "body": "Ohne Essen hast du 25 Gesundheit. Jedes [[valheim.food.food|Essen]] mit Gesundheitswert erhöht das Maximum, solange es wirkt. Gesundheit heilt nicht von allein, sondern alle zehn Sekunden um die [[valheim.food.healing|Heilkraft]] deiner Mahlzeiten; [[valheim.stat.regen|Regeneration]]-Effekte und [[valheim.food.mead|Met]] helfen zusätzlich.\n\nMehr maximale Gesundheit lässt dich außerdem mehr einstecken, bevor du ins [[valheim.combat.stagger|Taumeln]] gerätst. Manche Stäbe der [[valheim.skill.bloodmagic|Blutmagie]] kosten Gesundheit.",
+    "aliases": ["Gesundheit", "Gesundheit verbrauchen"]
+  },
+  "valheim.stat.stamina": {
+    "title": "Ausdauer",
+    "short": "Für Sprinten, Springen, Schwimmen, Angriffe, Blocken und Ausweichen; Grundwert 50, mehr durch Essen.",
+    "body": "Ohne Essen hast du 50 Ausdauer, [[valheim.food.food|Essen]] erhöht das Maximum. Sprinten, Springen, Schwimmen, Angriffe, [[valheim.combat.block|Blocken]] und Ausweichen verbrauchen sie; viele [[valheim.skill.overview|Fertigkeiten]] senken den Verbrauch ihrer Tätigkeit.\n\nEine Sekunde nach dem letzten Verbrauch lädt sie wieder auf: mit 6 pro Sekunde, bei fast leerer Leiste bis zu doppelt so schnell. Während Angriffen, beim Ausweichen, beim Schwimmen und wenn du [[valheim.status.encumbered|überladen]] bist, lädt sie nicht, beim Blocken langsamer. Siehe auch [[valheim.stat.regen]].",
+    "aliases": ["Ausdauer", "Ausdauerverwendung", "Ausdauerabzug"]
+  },
+  "valheim.stat.eitr": {
+    "title": "Eitr",
+    "short": "Magische Kraft für Zauberstäbe; du bekommst sie nur durch bestimmtes Essen.",
+    "body": "Ohne passendes [[valheim.food.food|Essen]] hast du kein Eitr. Erst Speisen mit Eitr-Wert, etwa aus Zutaten der [[valheim.biome.mistlands|Nebellande]], geben dir eine Eitr-Leiste. Stäbe der [[valheim.skill.elementalmagic|Elementarmagie]] und [[valheim.skill.bloodmagic|Blutmagie]] verbrauchen es.\n\nEitr lädt sich eine Sekunde nach dem letzten Verbrauch wieder auf, bei leerer Leiste schneller. Magierausrüstung kann die Eitr-Regeneration erhöhen.",
+    "aliases": ["Eitr", "Eitr verwenden"]
+  },
+  "valheim.stat.regen": {
+    "title": "Regeneration",
+    "short": "Wie schnell Gesundheit, Ausdauer und Eitr zurückkommen; Zustände verstärken oder bremsen das.",
+    "body": "Gesundheit kommt alle zehn Sekunden um die [[valheim.food.healing|Heilkraft]] deines Essens zurück, [[valheim.stat.stamina|Ausdauer]] und [[valheim.stat.eitr|Eitr]] laden laufend nach. Zustände ändern das Tempo:\n\n- Schneller: [[valheim.status.rested|Ausgeruht]], [[valheim.status.resting|Ruhend]], manche [[valheim.food.mead|Met]]-Sorten und [[valheim.item.trinket|Schmuckstücke]]\n- Langsamer: [[valheim.status.wet|Nass]], [[valheim.status.cold|Kälte]], [[valheim.status.freezing|Erfrieren]] (dabei keine Gesundheitsregeneration)\n\nMehrere Boni addieren sich, mehrere Abzüge werden miteinander multipliziert.",
+    "aliases": ["Gesundheitsregeneration", "Ausdauerregeneration", "Eitr-Regeneration", "Regeneration"]
+  },
+  "valheim.stat.carryweight": {
+    "title": "Tragkraft",
+    "short": "Bis 300 Gewicht trägst du ohne Mühe; darüber bist du überladen.",
+    "body": "Das Gewicht aller Gegenstände in deinem Inventar zählt zusammen, auch das der angelegten Ausrüstung. Liegt es über deiner Tragkraft von 300, bist du [[valheim.status.encumbered|überladen]].\n\nMehr tragen kannst du mit dem Gürtel Megingiard (+150), dem Met der Trollstärke (+250) und der Kraft von [[valheim.power.moder|Moder]] (+300). Auch [[valheim.status.corpserun|Leichenlauf]] gibt +150.",
+    "aliases": ["Gewicht", "Max. Gewicht"],
+    "note": "Grundwert 300 laut Player-Prefab; Welteinstellungen können ihn verändern."
+  },
+  "valheim.item.movement": {
+    "title": "Bewegungstempo",
+    "short": "Schwere Ausrüstung bremst dich und lässt Sprinten, Springen und Ausweichen mehr Ausdauer kosten.",
+    "body": "Ein negatives Bewegungstempo an Rüstung, Schild oder Waffe macht dich beim Gehen und Sprinten langsamer. Es erhöht außerdem den [[valheim.stat.stamina|Ausdauer]]-Verbrauch beim Sprinten, Springen und Ausweichen und dämpft den [[valheim.combat.knockback|Rückstoß]], den du einsteckst.\n\nDie Werte aller angelegten Teile addieren sich. Auch Zustände wie [[valheim.status.tared|Geteert]] senken das Tempo.",
+    "aliases": ["Bewegungstempo"]
+  },
+
+  "valheim.status.rested": {
+    "title": "Ausgeruht",
+    "short": "Schnellere Regeneration und 50 % mehr Fertigkeitszuwachs für einige Minuten.",
+    "body": "Ausgeruht bist du nach dem Aufwachen im Bett oder nachdem du 20 Sekunden [[valheim.status.resting|geruht]] hast. Der Effekt hält 8 Minuten, für jede [[valheim.rest.comfort|Komfort]]-Stufe über 1 eine Minute länger.\n\n- [[valheim.stat.regen|Regeneration]]: Gesundheit +50 %, Ausdauer und Eitr +100 %\n- Alle [[valheim.skill.overview|Fertigkeiten]] steigen 50 % schneller",
+    "aliases": ["Ausgeruht"]
+  },
+  "valheim.status.resting": {
+    "title": "Ruhend",
+    "short": "Am Feuer sitzen oder in einer Unterkunft am Feuer stehen: starke Regeneration, nach 20 Sekunden ausgeruht.",
+    "body": "Du ruhst, wenn du an einem Feuer sitzt oder an einem Feuer in einer [[valheim.status.shelter|Unterkunft]] stehst. Dabei darfst du weder [[valheim.status.wet|nass]] sein noch [[valheim.status.cold|frieren]] oder [[valheim.status.burning|brennen]], und kein Gegner darf dich wahrnehmen.\n\nWährend du ruhst, regenerierst du stark: Gesundheit +200 %, Ausdauer und Eitr +300 %. Nach 20 Sekunden wirst du [[valheim.status.rested|ausgeruht]]. Das Symbol zeigt dabei deine [[valheim.rest.comfort|Komfort]]-Stufe.",
+    "aliases": ["Ruhend"]
+  },
+  "valheim.rest.comfort": {
+    "title": "Komfort",
+    "short": "Bestimmt, wie lange Ausgeruht hält: jede Stufe über 1 bringt eine Minute mehr.",
+    "body": "Die Stufe beginnt bei 1. Bist du in einer [[valheim.status.shelter|Unterkunft]], kommt 1 dazu, außerdem der Komfortwert der Einrichtung im Umkreis von 10 Metern: Feuer, Bett, Stühle, Tische, Teppiche, Banner und Ähnliches.\n\nVon jeder Gruppe zählt nur das beste Stück, und gleiche Stücke zählen nur einmal. Außerhalb einer Unterkunft bleibt es bei Stufe 1. Die Stufe verlängert [[valheim.status.rested|Ausgeruht]].",
+    "aliases": ["Gemütlich", "Behaglichkeitsstufe"],
+    "note": "Im Spiel heißt die Anzeige „Gemütlich: N“ (Zustandssymbol) bzw. „Behaglichkeitsstufe“ (Statistik)."
+  },
+  "valheim.status.shelter": {
+    "title": "Unterkunft",
+    "short": "Du stehst unter einem Dach und bist weitgehend umschlossen.",
+    "body": "Du bist in einer Unterkunft, wenn ein Dach über dir ist und deine Umgebung zu mindestens 80 % abgedeckt ist. Dann steigt dein [[valheim.rest.comfort|Komfort]], und du kannst am Feuer auch stehend [[valheim.status.resting|ruhen]].\n\nIn eisiger Kälte wird aus [[valheim.status.freezing|Erfrieren]] in einer Unterkunft nur [[valheim.status.cold|Kälte]]; mit einem Feuer daneben frierst du gar nicht.",
+    "aliases": ["Unterkunft"]
+  },
+  "valheim.status.campfire": {
+    "title": "Feuer (Wärme)",
+    "short": "Du bist nah an einem Feuer: nötig zum Ruhen, hält Kälte fern und trocknet dich.",
+    "body": "Dieser Zustand zeigt, dass du in der Wärme eines Feuers stehst. Er ist nötig, um zu [[valheim.status.resting|ruhen]], hält nächtliche [[valheim.status.cold|Kälte]] fern und lässt dich viel schneller trocknen, wenn du [[valheim.status.wet|nass]] bist.\n\nGegen [[valheim.status.freezing|Erfrieren]] reicht ein Feuer allein nicht ganz: Ohne [[valheim.status.shelter|Unterkunft]] bleibt dir dann noch kalt.",
+    "aliases": ["Lagerfeuer"],
+    "note": "Der Zustand heißt im Spiel nur „Feuer“; dieser Alias gehört der Schadensart."
+  },
+  "valheim.status.wet": {
+    "title": "Nass",
+    "short": "Durch Regen oder Wasser: weniger Regeneration, schwach gegen Eis und Blitz.",
+    "body": "Regen ohne Dach über dir oder Wasser machen dich nass; danach hält der Zustand zwei Minuten an. Am Feuer trocknest du viel schneller.\n\n- [[valheim.stat.regen|Regeneration]]: Gesundheit −25 %, Ausdauer und Eitr −15 %\n- [[valheim.damagemod.resistant|Resistent]] gegen [[valheim.damage.fire]], [[valheim.damagemod.weak|schwach]] gegen [[valheim.damage.frost|Eis]] und [[valheim.damage.lightning]]\n- Nass kannst du nicht [[valheim.status.resting|ruhen]]",
+    "aliases": ["Nass", "durchnässt"]
+  },
+  "valheim.status.cold": {
+    "title": "Kälte",
+    "short": "Kaltes Wetter ohne Feuer: deutlich schwächere Regeneration.",
+    "body": "Dir wird kalt, wenn das Wetter kalt ist – in den meisten Gegenden nachts – und kein Feuer in der Nähe ist. In eisigen Gegenden wie dem [[valheim.biome.mountain|Gebirge]] ist dir kalt, sobald dir Feuer oder [[valheim.status.shelter|Unterkunft]] fehlt; fehlt beides, [[valheim.status.freezing|erfrierst]] du.\n\n- [[valheim.stat.regen|Regeneration]]: Gesundheit −50 %, Ausdauer und Eitr −25 %\n- Kalt kannst du nicht [[valheim.status.resting|ruhen]]\n\nResistenz gegen [[valheim.damage.frost|Eis]], etwa durch den Met des Frostwiderstands, verhindert Kälte ganz.",
+    "aliases": ["Kälte"]
+  },
+  "valheim.status.freezing": {
+    "title": "Erfrieren",
+    "short": "Eisige Kälte ohne Feuer und Unterkunft: kein Heilen, kaum Ausdauer und Schaden über Zeit.",
+    "body": "Du erfrierst in eisigen Gegenden wie dem [[valheim.biome.mountain|Gebirge]], wenn du weder an einem Feuer noch in einer [[valheim.status.shelter|Unterkunft]] bist.\n\n- Keine Gesundheits-[[valheim.stat.regen|Regeneration]], Ausdauer und Eitr −60 %\n- Du verlierst jede Sekunde 1 Gesundheit\n- Du bist [[valheim.damagemod.resistant|resistent]] gegen [[valheim.damage.fire]]\n\nResistenz gegen [[valheim.damage.frost|Eis]] – etwa durch die Wolfsrüstung oder den Met des Frostwiderstands – schützt dich vollständig.",
+    "aliases": ["Erfrieren", "erfrierst"]
+  },
+  "valheim.status.burning": {
+    "title": "Brennen",
+    "short": "Feuerschaden, der über einige Sekunden wirkt; Nässe löscht schneller.",
+    "body": "Erleidest du [[valheim.damage.fire|Feuerschaden]], wird er über etwa fünf Sekunden verteilt abgezogen. Neue Treffer erhöhen den Rest und starten die Zeit neu.\n\nBist du [[valheim.status.wet|nass]], erlischt das Brennen deutlich schneller. Der Gerstenwein macht dich [[valheim.damagemod.resistant|resistent]] gegen Feuer. Solange du brennst, kannst du nicht [[valheim.status.resting|ruhen]].",
+    "aliases": ["Brennen", "brennst"]
+  },
+  "valheim.status.poison": {
+    "title": "Gift (Zustand)",
+    "short": "Vergiftung: Giftschaden im Sekundentakt; viel Gift hält länger an.",
+    "body": "Eine Vergiftung teilt den [[valheim.damage.poison|Giftschaden]] auf Treffer im Sekundentakt auf. Je mehr Gift, desto länger dauert sie. Nur eine stärkere Vergiftung ersetzt eine laufende.\n\nDer Met des Giftwiderstands macht dich [[valheim.damagemod.veryresistant|sehr resistent]], die Kraft der [[valheim.power.queen|Königin]] [[valheim.damagemod.resistant|resistent]].",
+    "aliases": ["vergiftet"],
+    "note": "Der Zustand heißt im Spiel „Gift“; dieser Alias gehört der Schadensart."
+  },
+  "valheim.status.smoked": {
+    "title": "Rauchvergiftung",
+    "short": "Rauch um deinen Kopf kostet jede Sekunde Gesundheit.",
+    "body": "Sammelt sich Rauch um deinen Kopf, etwa unter dem Dach über einem Feuer, verlierst du jede Sekunde 2 [[valheim.stat.health|Gesundheit]]. Rüstung und Widerstände helfen dagegen nicht.\n\nDer Zustand endet, sobald dein Kopf wieder frei ist. Sorge in Gebäuden mit Feuer für Öffnungen, durch die der Rauch abziehen kann.",
+    "aliases": ["Rauchvergiftung", "Rauch"]
+  },
+  "valheim.status.encumbered": {
+    "title": "Überladen",
+    "short": "Mehr Gewicht als Tragkraft: langsam, kein Sprinten, Springen, Ausweichen oder Blocken.",
+    "body": "Trägst du mehr, als deine [[valheim.stat.carryweight|Tragkraft]] erlaubt, bist du überladen. Du kommst nur noch im Schleichtempo voran und kannst weder sprinten, springen, ausweichen noch [[valheim.combat.block|blocken]].\n\nBewegung kostet 5 [[valheim.stat.stamina|Ausdauer]] pro Sekunde, und Ausdauer lädt nicht nach. Ist sie leer, kommst du gar nicht mehr vom Fleck. Leg Gegenstände ab oder erhöhe deine Tragkraft.",
+    "aliases": ["Überladen"]
+  },
+  "valheim.status.corpserun": {
+    "title": "Leichenlauf",
+    "short": "Nach dem Leeren deines Grabsteins: kurz robuster, ausdauernder und stärker beladbar.",
+    "body": "Hast du deinen Grabstein nach dem Tod vollständig geleert, bekommst du 50 Sekunden lang Leichenlauf:\n\n- [[valheim.damagemod.resistant|Resistent]] gegen [[valheim.damage.blunt]], [[valheim.damage.slash]] und [[valheim.damage.pierce]]\n- Sprinten und Springen kosten 75 % weniger [[valheim.stat.stamina|Ausdauer]]\n- +150 [[valheim.stat.carryweight|Tragkraft]]\n- Du heilst jede Sekunde 5 [[valheim.stat.health|Gesundheit]]",
+    "aliases": ["Leichenlauf"],
+    "see": ["valheim.status.softdeath"]
+  },
+  "valheim.status.softdeath": {
+    "title": "Kein Fähigkeitenabzug",
+    "short": "Zehn Minuten nach einem Tod kostet ein weiterer Tod keine Fertigkeiten.",
+    "body": "Stirbst du, verlierst du 5 % jeder [[valheim.skill.overview|Fertigkeit]] und alles [[valheim.food.food|Essen]]; deine Gegenstände bleiben im Grabstein zurück. Danach zeigt dieser Zustand zehn Minuten lang an, dass ein erneuter Tod keine Fertigkeiten kostet.\n\nSo kannst du deinen Grabstein bergen, ohne doppelt zu verlieren. Hast du ihn geleert, hilft dir [[valheim.status.corpserun]].",
+    "aliases": ["Kein Fähigkeitenabzug"],
+    "note": "5 % gilt mit den Standard-Weltregeln; die Welteinstellung zur Todesstrafe kann das ändern."
+  },
+  "valheim.status.tared": {
+    "title": "Geteert",
+    "short": "Klebriger Teer: halbes Tempo und sehr schwach gegen Feuer.",
+    "body": "Watest du durch Teer, bleibst du nach dem Herauskommen noch zehn Sekunden geteert. Solange bewegst du dich 50 % langsamer und bist [[valheim.damagemod.veryweak|sehr schwach]] gegen [[valheim.damage.fire]].\n\nTeergruben findest du in den [[valheim.biome.plains|Ebenen]].",
+    "aliases": ["Geteert", "Teer"]
+  },
+  "valheim.status.puke": {
+    "title": "Fühlt sich kränklich",
+    "short": "Nach Brechbeeren: du verlierst nach und nach dein Essen und bist langsamer.",
+    "body": "Isst du Brechbeeren, ist dir 15 Sekunden lang übel. Alle zwei Sekunden verlierst du eine zufällige Mahlzeit und etwas [[valheim.stat.health|Gesundheit]], und du bewegst dich 50 % langsamer.\n\nSo leerst du absichtlich deine [[valheim.food.food|Essen]]-Plätze, um bessere Mahlzeiten zu essen.",
+    "aliases": ["Fühlt sich kränklich", "Brechbeeren"]
+  },
+
+  "valheim.food.food": {
+    "title": "Essen",
+    "short": "Bis zu drei Mahlzeiten erhöhen maximale Gesundheit, Ausdauer und Eitr.",
+    "body": "Du kannst drei verschiedene Mahlzeiten gleichzeitig im Bauch haben. Jede erhöht für ihre Dauer deine maximale [[valheim.stat.health|Gesundheit]], [[valheim.stat.stamina|Ausdauer]] oder [[valheim.stat.eitr|Eitr]] und heilt dich mit ihrer [[valheim.food.healing|Heilkraft]].\n\n- Gegen Ende der Dauer sinken die Werte immer schneller.\n- Dieselbe Speise kannst du erst wieder essen, wenn die Hälfte ihrer Zeit um ist; sie startet dann neu.\n- Sind alle Plätze voll, ersetzt neues Essen die Mahlzeit, die am weitesten abgelaufen ist – aber erst ab halber Zeit.\n\nBeim Tod verlierst du alles Essen.",
+    "aliases": ["Essen", "Nahrung", "Nahrungsmittel"]
+  },
+  "valheim.food.healing": {
+    "title": "Heilkraft",
+    "short": "Gesundheit, die eine Mahlzeit dir alle zehn Sekunden zurückgibt.",
+    "body": "Valheim heilt dich nicht von allein. Stattdessen gibt dir jede aktive Mahlzeit alle zehn Sekunden ihre Heilkraft als [[valheim.stat.health|Gesundheit]] zurück; die Werte aller Mahlzeiten addieren sich.\n\n[[valheim.status.rested|Ausgeruht]], [[valheim.status.resting|Ruhend]] und andere [[valheim.stat.regen|Regenerations]]-Effekte verstärken die Heilung, [[valheim.status.cold|Kälte]] und [[valheim.status.wet|Nässe]] schwächen sie.",
+    "aliases": ["Heilkraft"]
+  },
+  "valheim.food.mead": {
+    "title": "Met",
+    "short": "Getränke mit zeitlich begrenzter Wirkung; dafür reift eine Metmischung im Fermentierer.",
+    "body": "Met entsteht in zwei Schritten: Am [[valheim.station.meadcauldron|Metkocher]] mischst du eine Metmischung, die danach im Fermentierer reift. Der Fermentierer braucht ein Dach.\n\nSolange die Wirkung eines Mets läuft, kannst du keinen Met derselben Art nachtrinken. Bei Heil-, Ausdauer- und Eitr-Met dauert diese Sperre länger als die eigentliche Wirkung. Andere Sorten geben Widerstände, etwa der Met des Frostwiderstands, oder mehr [[valheim.stat.carryweight|Tragkraft]].",
+    "aliases": ["Metmischung", "Fermentierer"],
+    "note": "„Met“ allein hat nur 3 Zeichen und ist deshalb kein Alias."
+  },
+
+  "valheim.skill.overview": {
+    "title": "Fertigkeiten",
+    "short": "Werden durch Tun besser (Stufe 0–100); beim Tod verlierst du 5 % jeder Fertigkeit.",
+    "body": "Jede Fertigkeit steigt, indem du die Tätigkeit ausübst. Höhere Stufen brauchen immer mehr Übung; [[valheim.status.rested|Ausgeruht]] beschleunigt das um 50 %.\n\nBei Waffen bestimmt die Stufe, wie viel des angezeigten Schadens ankommt: auf Stufe 0 etwa 25–55 %, auf Stufe 100 etwa 85–100 %. Die gelbe Spanne im Tooltip zeigt deinen aktuellen Bereich. Außerdem kosten Angriffe auf Stufe 100 ein Drittel weniger Ausdauer, Eitr oder Gesundheit.\n\nBeim Tod sinkt jede Fertigkeit um 5 %, siehe [[valheim.status.softdeath]].",
+    "aliases": ["Fertigkeiten", "Fertigkeit"]
+  },
+  "valheim.skill.swords": {
+    "title": "Schwerter",
+    "short": "Schaden mit Schwertern.",
+    "body": "Steigt, wenn du mit einem Schwert triffst; Treffer auf Kreaturen zählen mehr. Höhere Stufen heben den tatsächlichen Schaden an und senken die [[valheim.stat.stamina|Ausdauer]] für Angriffe um bis zu ein Drittel, siehe [[valheim.skill.overview]]. Schwerter verursachen [[valheim.damage.slash]].",
+    "aliases": ["Schwerter"]
+  },
+  "valheim.skill.knives": {
+    "title": "Messer",
+    "short": "Schaden mit Messern; Messer treffen ahnungslose Gegner besonders hart.",
+    "body": "Steigt, wenn du mit einem Messer triffst, und hebt den tatsächlichen Schaden an; Angriffe kosten bis zu ein Drittel weniger [[valheim.stat.stamina|Ausdauer]]. Messer verursachen [[valheim.damage.slash]] und [[valheim.damage.pierce]] und haben eine [[valheim.combat.backstab|Hinterhältigkeit]] von 6x – ideal aus dem [[valheim.skill.sneak|Schleichen]] heraus.",
+    "aliases": ["Messer"]
+  },
+  "valheim.skill.clubs": {
+    "title": "Schlagwaffen",
+    "short": "Schaden mit Keulen, Streitkolben und Hämmern.",
+    "body": "Steigt, wenn du mit einer Schlagwaffe triffst, und hebt den tatsächlichen Schaden an; Angriffe kosten bis zu ein Drittel weniger [[valheim.stat.stamina|Ausdauer]]. Schlagwaffen verursachen [[valheim.damage.blunt]] – gut gegen Skelette und Schleimlinge.",
+    "aliases": ["Schlagwaffen"]
+  },
+  "valheim.skill.polearms": {
+    "title": "Stangenwaffen",
+    "short": "Schaden mit Atgeiren.",
+    "body": "Steigt, wenn du mit einer Stangenwaffe wie dem Atgeir triffst, und hebt den tatsächlichen Schaden an; Angriffe kosten bis zu ein Drittel weniger [[valheim.stat.stamina|Ausdauer]]. Atgeire verursachen [[valheim.damage.pierce]].",
+    "aliases": ["Stangenwaffen"]
+  },
+  "valheim.skill.spears": {
+    "title": "Speere",
+    "short": "Schaden mit Speeren, im Nahkampf und geworfen.",
+    "body": "Steigt, wenn du mit einem Speer triffst – im Nahkampf oder geworfen –, und hebt den tatsächlichen Schaden an; Angriffe kosten bis zu ein Drittel weniger [[valheim.stat.stamina|Ausdauer]]. Speere verursachen [[valheim.damage.pierce]].",
+    "aliases": ["Speere"]
+  },
+  "valheim.skill.blocking": {
+    "title": "Blocken (Fertigkeit)",
+    "short": "Erhöht deine Blockrüstung um bis zu 50 %.",
+    "body": "Steigt mit jedem [[valheim.combat.block|Block]], bei einer [[valheim.combat.parry|Parade]] doppelt so schnell. Auf Stufe 100 ist deine [[valheim.combat.blockpower|Blockrüstung]] um 50 % höher; der gelbe Wert im Tooltip zeigt sie bereits mit deiner Stufe."
+  },
+  "valheim.skill.axes": {
+    "title": "Äxte",
+    "short": "Schaden mit Äxten im Kampf.",
+    "body": "Steigt, wenn du mit einer Axt triffst, und hebt den tatsächlichen Schaden an; Angriffe kosten bis zu ein Drittel weniger [[valheim.stat.stamina|Ausdauer]]. Äxte verursachen [[valheim.damage.slash]] und [[valheim.damage.chop]]. Gegen Bäume zählt stattdessen [[valheim.skill.woodcutting]].",
+    "aliases": ["Äxte"]
+  },
+  "valheim.skill.woodcutting": {
+    "title": "Holzhacken",
+    "short": "Axtschaden gegen Bäume.",
+    "body": "Steigt, wenn du mit einer Axt Bäume und Stämme triffst. Die Stufe bestimmt, wie viel des [[valheim.damage.chop|Hacken]]-Schadens dort ankommt, Holzfällen geht also schneller. Die [[valheim.power.theelder|Kraft des Uralten]] hilft zusätzlich.",
+    "aliases": ["Holzhacken"]
+  },
+  "valheim.skill.bows": {
+    "title": "Bögen",
+    "short": "Schaden mit Bögen; schneller spannen, weniger Ausdauer beim Halten.",
+    "body": "Steigt mit jedem Treffer mit dem Bogen und hebt den tatsächlichen Schaden an. Auf Stufe 100 spannst du in einem Fünftel der Zeit, und das Halten der Sehne kostet ein Drittel weniger [[valheim.stat.stamina|Ausdauer]]. Pfeile verursachen [[valheim.damage.pierce]], besondere Pfeile zusätzlich Elementarschaden.",
+    "aliases": ["Bögen"]
+  },
+  "valheim.skill.crossbows": {
+    "title": "Armbrüste",
+    "short": "Präzision und Schaden mit Armbrüsten; schnelleres Nachladen.",
+    "body": "Steigt mit jedem Treffer mit der Armbrust und hebt den tatsächlichen Schaden an. Auf Stufe 100 lädst du doppelt so schnell nach. Bolzen verursachen [[valheim.damage.pierce]].",
+    "aliases": ["Armbrüste"]
+  },
+  "valheim.skill.elementalmagic": {
+    "title": "Elementarmagie",
+    "short": "Schaden und Eitr-Verbrauch der Elementarstäbe.",
+    "body": "Steigt, wenn deine Stäbe mit [[valheim.damage.fire]], [[valheim.damage.frost|Eis]], [[valheim.damage.lightning]] oder [[valheim.damage.poison]] treffen. Höhere Stufen heben den tatsächlichen Schaden an und senken den [[valheim.stat.eitr|Eitr]]-Verbrauch um bis zu ein Drittel. Die Stäbe stellst du am [[valheim.station.magetable|Galdr-Tisch]] her.",
+    "aliases": ["Elementarmagie"]
+  },
+  "valheim.skill.bloodmagic": {
+    "title": "Blutmagie",
+    "short": "Beschwörungen und Schutzzauber; kosten Eitr und teils Gesundheit.",
+    "body": "Stäbe der Blutmagie beschwören Helfer wie Skelette oder legen einen Schild an, der Schaden schluckt. Sie kosten [[valheim.stat.eitr|Eitr]] und teils [[valheim.stat.health|Gesundheit]]; eine höhere Stufe senkt die Kosten um bis zu ein Drittel, und der Schild schluckt mehr Schaden.\n\nDie Fertigkeit steigt auch, wenn deine beschworenen Skelette kämpfen.",
+    "aliases": ["Blutmagie"]
+  },
+  "valheim.skill.unarmed": {
+    "title": "Unbewaffnet",
+    "short": "Schaden mit bloßen Fäusten.",
+    "body": "Steigt, wenn du ohne Waffe triffst, und hebt den tatsächlichen Schaden an. Die Fenris-Rüstung hebt die Fertigkeit als [[valheim.item.seteffect|Set-Bonus]] um 15 Stufen.",
+    "aliases": ["Unbewaffnet"]
+  },
+  "valheim.skill.pickaxes": {
+    "title": "Spitzhacken",
+    "short": "Schaden mit Spitzhacken, im Kampf und beim Abbauen.",
+    "body": "Steigt mit jedem Treffer mit der Spitzhacke und hebt den tatsächlichen Schaden an, auch den [[valheim.damage.pickaxe|Abbauschaden]] an Felsen und Erz. Spitzhacken verursachen außerdem [[valheim.damage.pierce]].",
+    "aliases": ["Spitzhacken"]
+  },
+  "valheim.skill.jump": {
+    "title": "Springen",
+    "short": "Bis zu 40 % mehr Sprungkraft.",
+    "body": "Steigt mit jedem Sprung. Auf Stufe 100 springst du mit 40 % mehr Kraft höher und weiter. Ein Sprung kostet [[valheim.stat.stamina|Ausdauer]]; die Fertigkeit senkt diese Kosten nicht.",
+    "aliases": ["Springen"]
+  },
+  "valheim.skill.run": {
+    "title": "Sprinten",
+    "short": "Bis zu 25 % schneller bei halbem Ausdauerverbrauch.",
+    "body": "Steigt, solange du sprintest und Ausdauer hast. Auf Stufe 100 sprintest du 25 % schneller und verbrauchst nur noch halb so viel [[valheim.stat.stamina|Ausdauer]]. Ein negatives [[valheim.item.movement|Bewegungstempo]] bremst dich.",
+    "aliases": ["Sprinten"]
+  },
+  "valheim.skill.sneak": {
+    "title": "Schleichen",
+    "short": "Weniger Ausdauerverbrauch und bessere Tarnung beim Schleichen.",
+    "body": "Steigt, solange du schleichst – schneller, wenn Gegner in der Nähe sind. Auf Stufe 100 kostet Schleichen 75 % weniger [[valheim.stat.stamina|Ausdauer]], und du wirst schwerer entdeckt, besonders im Dunkeln. Unentdeckt triffst du mit [[valheim.combat.backstab|Hinterhältigkeit]].",
+    "aliases": ["Schleichen"]
+  },
+  "valheim.skill.swim": {
+    "title": "Schwimmen",
+    "short": "Senkt den Ausdauerverbrauch beim Schwimmen auf bis zur Hälfte.",
+    "body": "Steigt, solange du schwimmend vorankommst. Ohne Übung kostet Schwimmen 6 [[valheim.stat.stamina|Ausdauer]] pro Sekunde, auf Stufe 100 nur noch 3. Im Wasser lädt Ausdauer nicht nach; ist sie leer, ertrinkst du langsam.",
+    "aliases": ["Schwimmen"]
+  },
+  "valheim.skill.ride": {
+    "title": "Reiten",
+    "short": "Tempo und Ausdauer deines Reittiers.",
+    "body": "Steigt, während du auf einem gesattelten, [[valheim.tame.taming|zahmen]] Tier reitest, etwa einem Lox. Eine höhere Stufe macht dein Reittier schneller und schont seine Ausdauer.",
+    "aliases": ["Reiten"]
+  },
+  "valheim.skill.fishing": {
+    "title": "Angeln",
+    "short": "Weniger Ausdauerverbrauch und schnelleres Einholen beim Angeln.",
+    "body": "Steigt beim Angeln. Hängt ein Fisch am Haken, kostet er dich [[valheim.stat.stamina|Ausdauer]]; eine höhere Stufe senkt diesen Verbrauch und lässt dich schneller einholen. Für jede Gegend gibt es eigene Köder.",
+    "aliases": ["Angeln"]
+  },
+  "valheim.skill.cooking": {
+    "title": "Kochen",
+    "short": "Schneller kochen, Chance auf zusätzliche Portionen.",
+    "body": "Steigt, wenn du am [[valheim.station.cauldron|Kessel]], am [[valheim.station.preptable|Essenszubereitungs-Tisch]] oder am [[valheim.station.meadcauldron|Metkocher]] etwas herstellst oder an der Kochstelle brätst. Eine höhere Stufe beschleunigt das Kochen und gibt eine Chance auf zusätzliche Portionen.",
+    "aliases": ["Kochen"]
+  },
+  "valheim.skill.farming": {
+    "title": "Landwirtschaft",
+    "short": "Weniger Ausdauer und Verschleiß, größerer Ernteradius, Chance auf Bonusertrag.",
+    "body": "Steigt beim Anbauen und Ernten. Eine höhere Stufe senkt den [[valheim.stat.stamina|Ausdauer]]-Verbrauch und den Verschleiß des Pflugs, vergrößert den Ernteradius und gibt eine Chance auf zusätzlichen Ertrag. Die [[valheim.power.yagluth|Kraft von Yagluth]] hebt sie um 25 Stufen.",
+    "aliases": ["Landwirtschaft"]
+  },
+  "valheim.skill.crafting": {
+    "title": "Herstellung",
+    "short": "Schneller herstellen, weniger Hammer-Verschleiß und weniger Ausdauer beim Bauen.",
+    "body": "Steigt, wenn du an einer [[valheim.station.overview|Handwerksstation]] etwas herstellst oder [[valheim.item.repair|reparierst]]. Eine höhere Stufe beschleunigt die Herstellung, schont den Hammer und senkt den [[valheim.stat.stamina|Ausdauer]]-Verbrauch beim Bauen.",
+    "aliases": ["Herstellung"]
+  },
+  "valheim.skill.dodge": {
+    "title": "Ausweichen",
+    "short": "Ausweichrollen kosten bis zu 50 % weniger Ausdauer.",
+    "body": "Steigt mit jeder Ausweichrolle, deutlich stärker, wenn du dabei einem Treffer entgehst. Während der Rolle bist du kurz unverwundbar gegen alles, dem man ausweichen kann; entgehst du so einem Treffer, bekommst du die Hälfte der Ausdauer zurück und etwas [[valheim.combat.adrenaline|Adrenalin]].\n\nEine Rolle kostet 15 [[valheim.stat.stamina|Ausdauer]], auf Stufe 100 nur die Hälfte. [[valheim.status.encumbered|Überladen]] kannst du nicht ausweichen.",
+    "aliases": ["Ausweichen"]
+  },
+
+  "valheim.biome.meadows": {
+    "title": "Grasland",
+    "short": "Das ruhige Startgebiet mit Wildschweinen, Hirschen und Eikthyr.",
+    "body": "Im Grasland beginnt deine Reise. Hier findest du Holz, Steine und Feuerstein, dazu Wildschweine und Hirsche; Wildschweine kannst du [[valheim.tame.taming|zähmen]]. Eikthyr, der erste der [[valheim.power.overview|Verlassenen]], wartet hier, siehe [[valheim.power.eikthyr]].\n\nDanach führt dich der Weg in den [[valheim.biome.blackforest|Düsterwald]].",
+    "aliases": ["Grasland"]
+  },
+  "valheim.biome.blackforest": {
+    "title": "Düsterwald",
+    "short": "Dichter Wald mit Grauzwergen und Trollen; hier findest du Kupfer und Zinn.",
+    "body": "Im Düsterwald liegt Kupfer im Boden und Zinn an den Küsten, zusammen ergeben sie Bronze. In Grabkammern unter der Erde findest du Surtling-Kerne für den Schmelzofen. Grauzwerge sind [[valheim.damagemod.veryweak|sehr schwach]] gegen [[valheim.damage.fire]], Trolle [[valheim.damagemod.weak|schwach]] gegen [[valheim.damage.pierce]].\n\nHier herrscht der Uralte, siehe [[valheim.power.theelder]].",
+    "aliases": ["Düsterwald", "Dunklen Wald"]
+  },
+  "valheim.biome.swamp": {
+    "title": "Sumpfland",
+    "short": "Gefährliches Land voller Untoter; in den Versunkenen Krypten liegt Eisen.",
+    "body": "Im Sumpfland lauern Draugr, Skelette, Schleimlinge und Schlundegel. Eisen findest du als Schrott in den Versunkenen Krypten, die du mit dem Sumpfigen Schlüssel öffnest. Viele Untote sind gegen [[valheim.damage.poison]] [[valheim.damagemod.immune|immun]], Skelette und Schleimlinge [[valheim.damagemod.weak|schwach]] gegen [[valheim.damage.blunt]].\n\nHier wartet Knochenwanst, siehe [[valheim.power.bonemass]].",
+    "aliases": ["Sumpfland", "Sumpf"]
+  },
+  "valheim.biome.mountain": {
+    "title": "Gebirge",
+    "short": "Eisige Höhen: ohne Schutz vor Kälte erfrierst du; hier liegt Silber.",
+    "body": "Im Gebirge ist es so kalt, dass du ohne Feuer und [[valheim.status.shelter|Unterkunft]] [[valheim.status.freezing|erfrierst]]. Schutz bietet [[valheim.damagemod.resistant|Resistenz]] gegen [[valheim.damage.frost|Eis]], etwa durch die Wolfsrüstung oder den Met des Frostwiderstands. Silberadern liegen verborgen im Boden; die Wünschelrute von Knochenwanst spürt sie auf.\n\nHier leben Wölfe, Drachen und Steingolems, und Moder herrscht über die Gipfel, siehe [[valheim.power.moder]].",
+    "aliases": ["Gebirge"]
+  },
+  "valheim.biome.plains": {
+    "title": "Ebenen",
+    "short": "Offenes Land mit Fulingen, Todeskitos und Lox; hier wachsen Gerste und Flachs.",
+    "body": "Die Ebenen sind offen und gefährlich: Fulinge leben in Lagern, Todeskitos greifen aus der Luft an, und Lox sind riesig, lassen sich aber [[valheim.tame.taming|zähmen]]. Hier wachsen Gerste und Flachs, und in Teergruben wirst du [[valheim.status.tared|geteert]].\n\nYagluth wartet hier, siehe [[valheim.power.yagluth]].",
+    "aliases": ["Ebenen"]
+  },
+  "valheim.biome.mistlands": {
+    "title": "Nebellande",
+    "short": "Dichter Nebel, Sucher und Dvergr; hier findest du Zutaten voller Eitr.",
+    "body": "Dichter Nebel verdeckt die Sicht; ein Irrlicht lichtet ihn um dich herum. Hier leben Sucher, Zecken, Gjall und die Dvergr, und vieles, was hier wächst und lebt, ist von [[valheim.stat.eitr|Eitr]] durchdrungen. Speisen aus diesen Zutaten öffnen dir die Magie.\n\nIn der Befallenen Hochburg wartet die Königin, siehe [[valheim.power.queen]].",
+    "aliases": ["Nebellande", "Nebellanden"]
+  },
+  "valheim.biome.ashlands": {
+    "title": "Aschenlande",
+    "short": "Der glühend heiße Süden: kochendes Wasser, Lava und die Verkohlten.",
+    "body": "In den Aschenlanden kocht das Wasser, und schon ein Funke setzt Brennbares in Flammen. Die Verkohlten sind [[valheim.damagemod.weak|schwach]] gegen [[valheim.damage.spirit]] und [[valheim.damagemod.veryresistant|sehr resistent]] gegen [[valheim.damage.fire]]. Für die Überfahrt brauchst du ein stabileres Schiff; Keramikplatten vom [[valheim.station.artisanstation|Handwerkstisch]] isolieren gegen die Hitze.\n\nHier wartet Fader, siehe [[valheim.power.fader]].",
+    "aliases": ["Aschenlande", "Aschenlanden"]
+  },
+  "valheim.biome.deepnorth": {
+    "title": "Hoher Norden",
+    "short": "Das eisige Ende der Reise; hier herrscht Kall Fimbulbringer.",
+    "body": "Der Hohe Norden ist die letzte Prüfung auf dem Weg nach Walhalla. Hier herrscht Kall Fimbulbringer, den die Ahnen einst in Ketten halten wollten. Rechne mit [[valheim.status.cold|Kälte]] und nimm Schutz gegen [[valheim.damage.frost|Eis]] mit.",
+    "aliases": ["Hoher Norden"]
+  },
+  "valheim.biome.ocean": {
+    "title": "Ozean",
+    "short": "Das Meer zwischen den Landmassen: nur per Schiff zu queren, Heimat der Seeschlangen.",
+    "body": "Die Länder von Valheim liegen im Ozean verstreut; wer weiter will, braucht ein Schiff. Die Kraft von [[valheim.power.moder|Moder]] schenkt dir beim Segeln stets Rückenwind. Seeschlangen greifen Boote an; sie sind [[valheim.damagemod.immune|immun]] gegen [[valheim.damage.fire]] und [[valheim.damagemod.weak|schwach]] gegen [[valheim.damage.frost|Eis]].\n\nIm Süden kocht das Wasser vor den [[valheim.biome.ashlands|Aschenlanden]].",
+    "aliases": ["Ozean", "Ozeans"]
+  },
+
+  "valheim.station.overview": {
+    "title": "Handwerksstation",
+    "short": "Werkbank, Schmiede und Co.: stellen Gegenstände her, reparieren sie und schalten Bauteile frei.",
+    "body": "An einer Handwerksstation stellst du Gegenstände her, [[valheim.item.repair|reparierst]] sie und wertest ihre [[valheim.item.quality|Qualität]] auf. In ihrem Umkreis kannst du die zugehörigen Bauteile errichten.\n\n- **Ausbaustufe:** Jede angeschlossene Verbesserung in der Nähe hebt die Stufe um 1 und vergrößert meist den Bauradius.\n- Die meisten Stationen brauchen ein Dach und genug Schutz; [[valheim.station.cauldron|Kessel]] und [[valheim.station.meadcauldron|Metkocher]] brauchen stattdessen ein Feuer darunter.\n\nStationen: [[valheim.station.workbench]], [[valheim.station.forge]], [[valheim.station.cauldron]], [[valheim.station.stonecutter]], [[valheim.station.artisanstation]], [[valheim.station.blackforge]], [[valheim.station.magetable]], [[valheim.station.preptable]], [[valheim.station.meadcauldron]], [[valheim.station.upgradestation]].",
+    "aliases": ["Handwerksstation", "Ausbaustufe", "Benötigte Ausbaustufe"]
+  },
+  "valheim.station.workbench": {
+    "title": "Werkbank",
+    "short": "Die erste Station: Holzbauteile, Werkzeuge, Bögen und Rüstung aus Leder und Fell.",
+    "body": "Mit der Werkbank beginnt jede Basis. Sie schaltet Holzbauteile frei und stellt Werkzeuge, Bögen, Holzschilde und Rüstung aus Leder und Fell her. Ihr Bauradius beträgt 20 Meter und wächst mit jeder Verbesserung um 4 Meter.\n\nSie braucht ein Dach. Verbesserungen wie Hackklotz oder Gerbgestell heben ihre [[valheim.station.overview|Ausbaustufe]].",
+    "aliases": ["Werkbank"]
+  },
+  "valheim.station.forge": {
+    "title": "Schmiede",
+    "short": "Verarbeitet Metall zu Waffen, Rüstung, Werkzeugen und Schmuckstücken.",
+    "body": "Wer mit Metall arbeiten will, braucht die Schmiede: Ausrüstung aus Bronze, Eisen und Silber, Spitzhacken und viele [[valheim.item.trinket|Schmuckstücke]] entstehen hier. Die Barren dafür kommen aus dem Schmelzofen.\n\nSie braucht ein Dach. Verbesserungen wie Blasebalg und Ambosse heben ihre [[valheim.station.overview|Ausbaustufe]] und den Bauradius um je 3 Meter.",
+    "aliases": ["Schmiede"]
+  },
+  "valheim.station.cauldron": {
+    "title": "Kessel",
+    "short": "Kocht Gerichte aus mehreren Zutaten; braucht ein Feuer darunter.",
+    "body": "Im Kessel bereitest du Gerichte aus mehreren Zutaten zu. Er braucht ein brennendes Feuer darunter, aber kein Dach.\n\nVerbesserungen wie Gewürzaufhänger oder Metzgertisch heben seine [[valheim.station.overview|Ausbaustufe]] für anspruchsvollere Rezepte. Hier trainierst du [[valheim.skill.cooking|Kochen]].",
+    "aliases": ["Kessel"]
+  },
+  "valheim.station.stonecutter": {
+    "title": "Steinmetz",
+    "short": "Schaltet Steinbauteile frei.",
+    "body": "Wer mit Stein bauen will, braucht einen Steinmetz in der Nähe. Er schaltet Steinbauteile frei und stellt den Wetzstein her. Er braucht ein Dach; sein Bauradius beträgt 20 Meter.",
+    "aliases": ["Steinmetz", "Steinschneider"]
+  },
+  "valheim.station.artisanstation": {
+    "title": "Handwerkstisch",
+    "short": "Für Mechanik und knifflige Bauteile wie Windmühle, Spinnrad und Keramikplatten.",
+    "body": "Am Handwerkstisch entstehen Mechaniken und komplizierte Teile, etwa Mechanische Federn, Keramikplatten, Schildkerne und Geschosse. Er schaltet außerdem Bauteile wie Windmühle und Spinnrad frei. Sein Bauradius ist mit 40 Metern besonders groß; er braucht ein Dach.",
+    "aliases": ["Handwerkstisch"]
+  },
+  "valheim.station.blackforge": {
+    "title": "Schwarzschmiede",
+    "short": "Die fortgeschrittene Schmiede für die Ausrüstung ab den Nebellanden.",
+    "body": "Bestimmte Metalle, besonders im Verbund mit anderen Materialien, lassen sich nur an der Schwarzschmiede bearbeiten. Hier entsteht die Ausrüstung ab den [[valheim.biome.mistlands|Nebellanden]], dazu einige [[valheim.item.trinket|Schmuckstücke]]. Sie braucht ein Dach; Verbesserungen wie Kühler und Schraubstock heben ihre [[valheim.station.overview|Ausbaustufe]].",
+    "aliases": ["Schwarzschmiede"]
+  },
+  "valheim.station.magetable": {
+    "title": "Galdr-Tisch",
+    "short": "Fertigt Zauberstäbe, Magierkleidung und den Federumhang.",
+    "body": "Am Galdr-Tisch entstehen die Stäbe der [[valheim.skill.elementalmagic|Elementarmagie]] und [[valheim.skill.bloodmagic|Blutmagie]], Magierkleidung und der Federumhang. Zum Zaubern brauchst du [[valheim.stat.eitr|Eitr]]. Der Tisch braucht ein Dach; Verbesserungen wie der Runentisch heben seine [[valheim.station.overview|Ausbaustufe]].",
+    "aliases": ["Galdr-Tisch"]
+  },
+  "valheim.station.preptable": {
+    "title": "Essenszubereitungs-Tisch",
+    "short": "Bereitet Festmahle, Angelköder und rohe Pasteten und Teige für den Ofen vor.",
+    "body": "Nicht alles gehört direkt in den [[valheim.station.cauldron|Kessel]]: Am Essenszubereitungs-Tisch entstehen Festmahle, Angelköder sowie rohe Pasteten und Teige, die du danach im Ofen backst. Er braucht ein Dach, und hier trainierst du [[valheim.skill.cooking|Kochen]].",
+    "aliases": ["Essenszubereitungs-Tisch"]
+  },
+  "valheim.station.meadcauldron": {
+    "title": "Metkocher",
+    "short": "Mischt Metmischungen, die danach im Fermentierer reifen.",
+    "body": "Der Metkocher ist ein Kupfertopf zum Mischen von [[valheim.food.mead|Met]]: Hier entstehen die Metmischungen, die du danach im Fermentierer reifen lässt. Er braucht ein brennendes Feuer darunter, aber kein Dach. Auch hier trainierst du [[valheim.skill.cooking|Kochen]].",
+    "aliases": ["Metkocher"]
+  },
+  "valheim.station.upgradestation": {
+    "title": "Schmiede des Potenzials",
+    "short": "Verfeinert Ausrüstung über die normale Höchstqualität hinaus – mit Risiko.",
+    "body": "An der Schmiede des Potenzials hebst du einen Gegenstand über seine höchste [[valheim.item.quality|Qualität]] hinaus. Dafür brauchst du neben dem Material einen passenden Götzen. Die Verfeinerung kann gelingen, den Gegenstand um eine Stufe zurückwerfen oder ihn zerstören.\n\nSie braucht weder Dach noch Feuer.",
+    "aliases": ["Schmiede des Potenzials", "Verfeinerung", "Götze"]
+  },
+
+  "valheim.item.quality": {
+    "title": "Qualität",
+    "short": "Aufwertungsstufe eines Gegenstands: jede Stufe verbessert Schaden, Rüstung, Block und Haltbarkeit.",
+    "body": "Ausrüstung wertest du an ihrer [[valheim.station.overview|Handwerksstation]] auf. Jede Stufe erhöht – je nach Gegenstand – Schaden, [[valheim.combat.armor|Rüstung]], [[valheim.combat.blockpower|Blockrüstung]] und [[valheim.item.durability|Haltbarkeit]]; der aufgewertete Gegenstand ist wieder voll heil.\n\nFür jede Stufe brauchst du erneut Material und eine um 1 höhere [[valheim.station.overview|Ausbaustufe]]. Über die Max. Qualität hinaus geht es nur an der [[valheim.station.upgradestation]].",
+    "aliases": ["Qualität", "Max. Qualität", "Aufwerten"]
+  },
+  "valheim.item.durability": {
+    "title": "Haltbarkeit",
+    "short": "Nutzt sich beim Gebrauch ab; bei 0 legst du den Gegenstand ab, bis du ihn reparierst.",
+    "body": "Waffen und Werkzeuge verlieren Haltbarkeit bei jedem Einsatz, Schilde beim Blocken, Rüstung bei Treffern und manche Gegenstände wie Fackeln schon durchs Tragen. Erreicht sie 0, wird der Gegenstand abgelegt und lässt sich erst nach einer [[valheim.item.repair|Reparatur]] wieder anlegen; manche zerfallen dabei ganz.\n\nHöhere [[valheim.item.quality|Qualität]] erhöht die maximale Haltbarkeit. Ist sie aufgebraucht, blinkt der Balken im Inventar rot.",
+    "aliases": ["Haltbarkeit", "zerbrochen"]
+  },
+  "valheim.item.repair": {
+    "title": "Reparieren",
+    "short": "Stellt die Haltbarkeit kostenlos wieder her – an der passenden Station mit genug Ausbaustufe.",
+    "body": "Stehst du an einer [[valheim.station.overview|Handwerksstation]], repariert der Reparieren-Knopf im Herstellungsfenster einen abgenutzten Gegenstand nach dem anderen, ganz ohne Material. Es muss die Station sein, an der der Gegenstand hergestellt wird, und ihre Ausbaustufe muss das Instandsetzungs-Level aus dem Tooltip erreichen.\n\nReparieren trainiert [[valheim.skill.crafting|Herstellung]].",
+    "aliases": ["Reparieren", "Instandsetzungs-Level", "repariert"]
+  },
+  "valheim.item.trinket": {
+    "title": "Schmuckstück",
+    "short": "Eigener Ausrüstungsplatz; sammelt Adrenalin und löst bei voller Leiste seinen Effekt aus.",
+    "body": "Ein Schmuckstück trägst du in einem eigenen Platz. Es gibt dir eine [[valheim.combat.adrenaline|Adrenalin]]-Leiste, deren Größe im Tooltip unter „Adrenalin“ steht. Ist sie voll, wirkt der „Adrenalineffekt“ des Schmuckstücks, etwa ein Regenerationsschub oder mehr Schaden für kurze Zeit.\n\nSchmuckstücke stellst du an der [[valheim.station.forge|Schmiede]] oder der [[valheim.station.blackforge|Schwarzschmiede]] her.",
+    "aliases": ["Schmuckstück", "Schmuckstücke"]
+  },
+  "valheim.item.noteleport": {
+    "title": "Nicht teleportierbar",
+    "short": "Mit diesem Gegenstand im Inventar kannst du kein gewöhnliches Portal benutzen.",
+    "body": "Erze, Metalle und einige andere wertvolle Dinge lassen sich nicht durch ein Portal mitnehmen. Trägst du so etwas bei dir, verweigert das Portal den Durchgang; du musst die Ladung per Schiff oder zu Fuß bringen.\n\nDer Portalstein lässt dich laut seiner Beschreibung selbst mit den wertvollsten Gegenständen hindurch. Eine Welteinstellung kann die Sperre außerdem ganz aufheben.",
+    "aliases": ["Kann nicht teleportiert werden"]
+  },
+  "valheim.item.seteffect": {
+    "title": "Set-Bonus",
+    "short": "Zusätzlicher Effekt, wenn du genug Teile desselben Rüstungssets trägst.",
+    "body": "Manche Rüstungen gehören zu einem Set. Trägst du die im Tooltip genannte Zahl an Teilen gleichzeitig, wirkt der Set-Bonus. Die Wolfsrüstung macht dich zum Beispiel [[valheim.damagemod.resistant|resistent]] gegen [[valheim.damage.frost|Eis]], die Trollrüstung verbessert [[valheim.skill.sneak|Schleichen]].",
+    "aliases": ["Set-Bonus"]
+  },
+
+  "valheim.power.overview": {
+    "title": "Verlassenen-Kraft",
+    "short": "Boss besiegt, Trophäe geopfert: eine Kraft, die du mit F für fünf Minuten auslöst.",
+    "body": "Hast du einen der Verlassenen besiegt, hängst du seine Trophäe an den Opfersteinen auf. Danach wählst du dort mit „Kraft aktivieren“ seine Kraft; ausgewählt ist immer nur eine.\n\nMit `F` (Standardbelegung) löst du sie aus: Sie wirkt fünf Minuten, danach musst du 20 Minuten warten. Das Auslösen gibt dir außerdem etwas [[valheim.combat.adrenaline|Adrenalin]].\n\nKräfte: [[valheim.power.eikthyr]], [[valheim.power.theelder]], [[valheim.power.bonemass]], [[valheim.power.moder]], [[valheim.power.yagluth]], [[valheim.power.queen]], [[valheim.power.fader]].",
+    "aliases": ["Verlassenen-Kraft", "Verlassenen"]
+  },
+  "valheim.power.eikthyr": {
+    "title": "Kraft von Eikthyr",
+    "short": "Fünf Minuten lang 60 % weniger Ausdauer fürs Sprinten, Springen und Schwimmen.",
+    "body": "Eikthyr ist der erste der [[valheim.power.overview|Verlassenen]] und herrscht im [[valheim.biome.meadows|Grasland]]. Seine Kraft senkt den [[valheim.stat.stamina|Ausdauer]]-Verbrauch beim Sprinten, Springen und Schwimmen um 60 % – gut für lange Wege.",
+    "aliases": ["Eikthyr"]
+  },
+  "valheim.power.theelder": {
+    "title": "Kraft des Uralten",
+    "short": "Fünf Minuten lang 60 % mehr Schaden gegen Bäume und Gestein, dazu bessere Heilung.",
+    "body": "Der Uralte herrscht im [[valheim.biome.blackforest|Düsterwald]]. Seine Kraft erhöht den Schaden von [[valheim.damage.chop]] und [[valheim.damage.pickaxe|Spitzhacke]] um 60 % und deine Gesundheits-[[valheim.stat.regen|Regeneration]] um 30 % – gut zum Holzfällen und Abbauen.",
+    "note": "Kein Alias „Der Uralte“: würde auch „der uralte Zauberkunst“ (Beschreibung der Aschenlande-Magierrobe) treffen."
+  },
+  "valheim.power.bonemass": {
+    "title": "Kraft von Knochenwanst",
+    "short": "Fünf Minuten lang leicht resistent gegen physischen Schaden; Blocken kostet keine Ausdauer.",
+    "body": "Knochenwanst herrscht im [[valheim.biome.swamp|Sumpfland]]. Seine Kraft macht dich [[valheim.damagemod.slightlyresistant|leicht resistent]] gegen [[valheim.damage.blunt]], [[valheim.damage.slash]] und [[valheim.damage.pierce]]. [[valheim.combat.block|Blocken]] kostet währenddessen keine Ausdauer, sondern gibt dir sogar etwas zurück.",
+    "aliases": ["Knochenwanst"]
+  },
+  "valheim.power.moder": {
+    "title": "Kraft von Moder",
+    "short": "Fünf Minuten lang Rückenwind beim Segeln, Frostresistenz, mehr Tragkraft und Tempo.",
+    "body": "Moder herrscht im [[valheim.biome.mountain|Gebirge]]. Ihre Kraft schenkt dir beim Segeln stets Rückenwind, macht dich [[valheim.damagemod.resistant|resistent]] gegen [[valheim.damage.frost|Eis]], erhöht deine [[valheim.stat.carryweight|Tragkraft]] um 300 und dein Bewegungstempo um 10 %.",
+    "aliases": ["Moder"]
+  },
+  "valheim.power.yagluth": {
+    "title": "Kraft von Yagluth",
+    "short": "Fünf Minuten lang 10 % mehr Schaden, Blitzresistenz und 25 Stufen mehr Landwirtschaft.",
+    "body": "Yagluth herrscht in den [[valheim.biome.plains|Ebenen]]. Seine Kraft erhöht deinen Schaden in allen [[valheim.damage.overview|Schadensarten]] um 10 %, macht dich [[valheim.damagemod.resistant|resistent]] gegen [[valheim.damage.lightning]] und hebt [[valheim.skill.farming|Landwirtschaft]] um 25 Stufen.",
+    "aliases": ["Yagluth"]
+  },
+  "valheim.power.queen": {
+    "title": "Kraft der Königin",
+    "short": "Fünf Minuten lang doppelte Eitr-Regeneration, Giftresistenz und Schleichen ohne Ausdauer.",
+    "body": "Die Königin herrscht in den [[valheim.biome.mistlands|Nebellanden]]. Ihre Kraft verdoppelt deine [[valheim.stat.eitr|Eitr]]-Regeneration, macht dich [[valheim.damagemod.resistant|resistent]] gegen [[valheim.damage.poison]] und lässt dich [[valheim.skill.sneak|schleichen]], ohne Ausdauer zu verbrauchen.",
+    "note": "Kein Alias „Die Königin“: würde auch „Die Königin der Bienen!“ (Bienenkönigin-Beschreibung) treffen."
+  },
+  "valheim.power.fader": {
+    "title": "Kraft von Fader",
+    "short": "Fünf Minuten lang doppelt so viel Adrenalin, mehr Taumelwiderstand und Feuerresistenz.",
+    "body": "Fader herrscht in den [[valheim.biome.ashlands|Aschenlanden]]. Seine Kraft verdoppelt das [[valheim.combat.adrenaline|Adrenalin]], das du sammelst, erhöht deinen Widerstand gegen [[valheim.combat.stagger|Taumeln]] um 50 % und macht dich [[valheim.damagemod.resistant|resistent]] gegen [[valheim.damage.fire]].",
+    "aliases": ["Fader", "Fader-Macht"]
+  },
+
+  "valheim.tame.taming": {
+    "title": "Zähmen",
+    "short": "Füttere ein wildes Tier und erschrecke es nicht – nach einer Weile ist es zahm.",
+    "body": "Zähmbar sind etwa Wildschweine, Wölfe, Lox, Elche und Asksvin. Leg passendes Futter aus: Hat das Tier gefressen, ist es zehn Minuten lang satt, und nur satt und ohne Angst wächst seine Zahmheit. Es braucht insgesamt 30 solche Minuten; ist jemand unter der Wirkung des Gebräus des Tiergeflüsters in bis zu 60 Metern Nähe, geht es doppelt so schnell.\n\nWölfe folgen dir auf Befehl; auf Lox, Asksvin und Elchen [[valheim.skill.ride|reitest]] du mit Sattel. Satte, zahme Tiere vermehren sich, siehe [[valheim.tame.breeding]].",
+    "aliases": ["Zähmen", "zahme", "Zahm", "Zahmheit", "gezähmt"]
+  },
+  "valheim.tame.breeding": {
+    "title": "Züchten",
+    "short": "Satte, zahme Tiere mit einem Partner in der Nähe bekommen Nachwuchs, bis es zu eng wird.",
+    "body": "Gezähmte Tiere vermehren sich von selbst, wenn sie satt und ungestört sind und ein Partner ihrer Art in der Nähe ist. Mit der Zeit sammeln sie Zuneigung; ist genug beisammen, wird das Tier trächtig und bekommt bald darauf ein Junges, das gleich [[valheim.tame.taming|zahm]] ist.\n\n- Das Junge übernimmt die Stufe (Sterne) seiner Mutter.\n- Stehen zu viele Tiere ihrer Art dicht beieinander, gibt es keinen Nachwuchs mehr.\n\nEin Stern bedeutet doppelte Gesundheit und 50 % mehr Schaden, zwei Sterne dreifache Gesundheit und doppelten Schaden."
+  }
+}
