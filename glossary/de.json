@@ -620,7 +620,7 @@
   "valheim.station.forge": {
     "title": "Schmiede",
     "short": "Verarbeitet Metall zu Waffen, Rüstung, Werkzeugen und Schmuckstücken.",
-    "body": "Wer mit Metall arbeiten will, braucht die Schmiede: Ausrüstung aus Bronze, Eisen und Silber, Spitzhacken und viele [[valheim.item.trinket|Schmuckstücke]] entstehen hier. Die Barren dafür kommen aus dem Schmelzofen.\n\nSie braucht ein Dach. Verbesserungen wie Blasebalg und Ambosse heben ihre [[valheim.station.overview|Ausbaustufe]] und den Bauradius um je 3 Meter.",
+    "body": "Die Schmiede verarbeitet Metall: Ausrüstung aus Bronze, Eisen und Silber, Spitzhacken und viele [[valheim.item.trinket|Schmuckstücke]] entstehen hier. Die Barren dafür kommen aus dem Schmelzofen.\n\nSie braucht ein Dach. Verbesserungen wie Blasebalg und Ambosse heben ihre [[valheim.station.overview|Ausbaustufe]] und den Bauradius um je 3 Meter.",
     "aliases": ["Schmiede"]
   },
   "valheim.station.cauldron": {
@@ -632,7 +632,7 @@
   "valheim.station.stonecutter": {
     "title": "Steinmetz",
     "short": "Schaltet Steinbauteile frei.",
-    "body": "Wer mit Stein bauen will, braucht einen Steinmetz in der Nähe. Er schaltet Steinbauteile frei und stellt den Wetzstein her. Er braucht ein Dach; sein Bauradius beträgt 20 Meter.",
+    "body": "Steinbauteile brauchen einen Steinmetz in der Nähe: Er schaltet sie im Baumenü frei und stellt den Wetzstein her. Er braucht ein Dach; sein Bauradius beträgt 20 Meter.",
     "aliases": ["Steinmetz", "Steinschneider"]
   },
   "valheim.station.artisanstation": {
@@ -699,7 +699,7 @@
   "valheim.item.noteleport": {
     "title": "Nicht teleportierbar",
     "short": "Mit diesem Gegenstand im Inventar kannst du kein gewöhnliches Portal benutzen.",
-    "body": "Erze, Metalle und einige andere wertvolle Dinge lassen sich nicht durch ein Portal mitnehmen. Trägst du so etwas bei dir, verweigert das Portal den Durchgang; du musst die Ladung per Schiff oder zu Fuß bringen.\n\nDer Portalstein lässt dich laut seiner Beschreibung selbst mit den wertvollsten Gegenständen hindurch. Eine Welteinstellung kann die Sperre außerdem ganz aufheben.",
+    "body": "Erze, Metalle und einige andere wertvolle Dinge lassen sich nicht durch ein Portal mitnehmen. Trägst du so etwas bei dir, verweigert das Portal den Durchgang; du musst die Ladung per Schiff oder zu Fuß bringen.\n\nDer Portalstein ist die Ausnahme und lässt auch solche Gegenstände durch. Eine Welteinstellung kann die Sperre außerdem ganz aufheben.",
     "aliases": ["Kann nicht teleportiert werden"]
   },
   "valheim.item.seteffect": {

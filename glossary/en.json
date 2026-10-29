@@ -629,7 +629,7 @@
   "valheim.station.stonecutter": {
     "title": "Stonecutter",
     "short": "Unlocks stone building pieces.",
-    "body": "If you want to build with stone, you need a stonecutter nearby. It unlocks stone building pieces and crafts the Sharpening Stone. It needs a roof; its building range is 20 metres.",
+    "body": "Stone building pieces need a stonecutter close by: it unlocks them in the build menu and crafts the Sharpening Stone. It needs a roof; its building range is 20 metres.",
     "aliases": ["Stonecutter"]
   },
   "valheim.station.artisanstation": {
@@ -641,7 +641,7 @@
   "valheim.station.blackforge": {
     "title": "Black Forge",
     "short": "The advanced forge for equipment from the Mistlands onwards.",
-    "body": "Certain metals, especially combined with other materials, can only be worked at the Black Forge. Equipment from the [[valheim.biome.mistlands|Mistlands]] onwards is made here, along with some [[valheim.item.trinket|trinkets]]. It needs a roof; improvements such as the Black Forge Cooler and the Vice raise its [[valheim.station.overview|station level]].",
+    "body": "The Black Forge works the metals of the later biomes that the regular forge cannot handle. Equipment from the [[valheim.biome.mistlands|Mistlands]] onwards is made here, along with some [[valheim.item.trinket|trinkets]]. It needs a roof; improvements such as the Black Forge Cooler and the Vice raise its [[valheim.station.overview|station level]].",
     "aliases": ["Black Forge"]
   },
   "valheim.station.magetable": {
@@ -696,7 +696,7 @@
   "valheim.item.noteleport": {
     "title": "Can't be teleported",
     "short": "With this item in your inventory you cannot use a normal portal.",
-    "body": "Ores, metals and some other valuable things cannot be taken through a portal. If you carry such an item, the portal refuses to let you through; you have to bring the load by ship or on foot.\n\nAccording to its description, the stone portal lets you through even with the most valuable items. A world setting can also lift the restriction entirely.",
+    "body": "Ores, metals and some other valuable things cannot be taken through a portal. If you carry such an item, the portal refuses to let you through; you have to bring the load by ship or on foot.\n\nThe stone portal is the exception and lets such items through as well. A world setting can also lift the restriction entirely.",
     "aliases": ["Can't be teleported"]
   },
   "valheim.item.seteffect": {
