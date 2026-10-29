@@ -3,8 +3,9 @@
 #   powershell -ExecutionPolicy Bypass -File build.ps1 [-Out <folder>]
 #
 # Output: <Out>\Gorduan-DeepTip\ (package folder) and <Out>\Gorduan-DeepTip-<version>.zip
-# Checks: the glossary with tools\deeptip-check.mjs (Node 18+, if installed), the manifest description (max 250 chars),
-# no BOM in manifest.json / README.md / CHANGELOG.md (Thunderstore rejects it).
+# Checks: the glossary with the DeepTip validator (tools\deeptip-check.mjs of https://github.com/gorduan/DeepTip, Node 18+;
+# found via the environment variable DEEPTIP_REPO or a DeepTip checkout next to this repository), the manifest
+# description (max 250 chars), no BOM in manifest.json / README.md / CHANGELOG.md (Thunderstore rejects it).
 param([string]$Out = (Join-Path $PSScriptRoot 'build-output'))
 
 $ErrorActionPreference = 'Stop'
@@ -19,7 +20,11 @@ dotnet build (Join-Path $root 'GC_Valheim_DeepTip.csproj') -c Release -nologo -v
 if ($LASTEXITCODE -ne 0) { Write-Host 'Build failed' -ForegroundColor Red; exit 1 }
 
 $glossary = @(Get-ChildItem (Join-Path $root 'glossary') -Filter '*.json' -ErrorAction SilentlyContinue)
-$check = @((Join-Path $root 'tools\deeptip-check.mjs'), (Join-Path $root '..\tools\deeptip-check.mjs')) | Where-Object { Test-Path $_ } | Select-Object -First 1
+$candidates = @()
+if ($env:DEEPTIP_REPO) { $candidates += Join-Path $env:DEEPTIP_REPO 'tools\deeptip-check.mjs' }
+$candidates += @((Join-Path $root '..\DeepTip\tools\deeptip-check.mjs'), (Join-Path $root '..\..\..\..\DeepTip\tools\deeptip-check.mjs'))
+$check = $candidates | Where-Object { Test-Path $_ } | Select-Object -First 1
+if (-not $check) { Write-Host 'DeepTip validator not found (set DEEPTIP_REPO): glossary not checked' -ForegroundColor Yellow }
 if ($glossary.Count -gt 0 -and $check -and (Get-Command node -ErrorAction SilentlyContinue)) {
     node $check --base de @($glossary | ForEach-Object { $_.FullName }) | Out-Host
     if ($LASTEXITCODE -ne 0) { Write-Host 'Glossary check failed' -ForegroundColor Red; exit 1 }
