@@ -50,7 +50,7 @@ foreach ($file in 'README.md', 'CHANGELOG.md', 'LICENSE', 'icon.png') {
 $manifest = [ordered]@{
     name = 'DeepTip'
     version_number = $version
-    website_url = 'https://github.com/gorduan/DeepTip'
+    website_url = 'https://github.com/gorduan/Valheim_DeepTip'
     description = $description
     dependencies = @('denikson-BepInExPack_Valheim-5.4.2350')
 }

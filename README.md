@@ -94,6 +94,6 @@ Events: `Api.Opened`, `Api.Closed`, `Api.Pinned` (key), `Api.Changed` (glossary 
 
 ## License
 
-MIT. Source code: https://github.com/gorduan/DeepTip. Gorduan Community (GC): free for anyone to use, modify and re-upload.
+MIT. Source code: https://github.com/gorduan/Valheim_DeepTip (the DeepTip pattern, its specification and the glossary format: https://github.com/gorduan/DeepTip). Gorduan Community (GC): free for anyone to use, modify and re-upload.
 
 Author: Gorduan.
