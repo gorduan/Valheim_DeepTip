@@ -56,7 +56,8 @@ internal static class Manager
 	/// <summary>A Valheim tooltip that waits while the mouse heads into the open one (SPEC §3.4 suppression).</summary>
 	internal static (UITooltip Tip, GameObject Go, float Since)? Deferred;
 
-	internal static bool MouseMode => !ZInput.IsExclusiveGamepadActive() && !ZInput.IsTouchActive();
+	/// <summary>Mouse and keyboard in use. In the first frames after start Valheim's input system does not exist yet: no windows then.</summary>
+	internal static bool MouseMode => ZInput.instance != null && !ZInput.IsExclusiveGamepadActive() && !ZInput.IsTouchActive();
 	internal static bool Active => Plugin.HasUi && Settings.Enabled.Value && MouseMode;
 	internal static bool IsOpen(Window w) => wins.Contains(w);
 	internal static IReadOnlyList<Window> Windows => wins;
