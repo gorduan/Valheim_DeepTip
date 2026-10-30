@@ -27,7 +27,7 @@ internal sealed class GlossaryView : IView
 	private readonly GameObject root;
 	private readonly RectTransform rect;
 	private readonly Image background;
-	private readonly Outline frame;
+	private readonly Frame frame;
 	private readonly RectTransform viewport;
 	private readonly RectTransform content;
 	private readonly TextMeshProUGUI topic;
@@ -59,10 +59,7 @@ internal sealed class GlossaryView : IView
 		background.type = Theme.Background != null ? Theme.BackgroundType : Image.Type.Simple;
 		background.color = Theme.Background != null ? Theme.BackgroundColor : new Color(0f, 0f, 0f, 0.88f);
 		background.raycastTarget = true; // clicks inside never reach the game UI behind the window
-		frame = root.AddComponent<Outline>();
-		frame.effectDistance = new Vector2(2f, -2f);
-		frame.useGraphicAlpha = false;
-		frame.enabled = false;
+		Shade(rect);
 		root.AddComponent<ClickCatcher>().Window = window;
 
 		topic = Theme.Text(rect, "Topic", Theme.TopicSize, Theme.TopicColor);
@@ -99,7 +96,33 @@ internal sealed class GlossaryView : IView
 		br.pivot = new Vector2(0f, 0f);
 		br.sizeDelta = new Vector2(0f, 3f);
 		bar.SetActive(false);
+		frame = new Frame(rect);
 		Refresh();
+	}
+
+	/// <summary>
+	/// Valheim's tooltip background is see-through, so item icons showed through the text (Jan, 30.10.2026): a second
+	/// layer of the same sprite (same edges) covers by Settings.Opacity.
+	/// </summary>
+	private static void Shade(RectTransform parent)
+	{
+		if (Theme.Background == null || Settings.Opacity.Value <= 0f)
+		{
+			return;
+		}
+		GameObject go = new("Shade", typeof(RectTransform));
+		go.transform.SetParent(parent, false);
+		RectTransform rt = (RectTransform)go.transform;
+		rt.anchorMin = Vector2.zero;
+		rt.anchorMax = Vector2.one;
+		rt.offsetMin = Vector2.zero;
+		rt.offsetMax = Vector2.zero;
+		Image image = go.AddComponent<Image>();
+		image.sprite = Theme.Background;
+		image.type = Theme.BackgroundType;
+		Color c = Theme.BackgroundColor;
+		image.color = new Color(c.r, c.g, c.b, Settings.Opacity.Value);
+		image.raycastTarget = false;
 	}
 
 	public GameObject Root => root;
@@ -278,8 +301,7 @@ internal sealed class GlossaryView : IView
 	public void SetPinned(bool value)
 	{
 		pinned = value;
-		frame.enabled = value;
-		frame.effectColor = Settings.PinnedColor.Value;
+		frame.Show(value, Settings.PinnedColor.Value);
 		pinIcon.sprite = value ? Theme.PinFilled : Theme.Pin;
 		Layout();
 	}
@@ -296,16 +318,7 @@ internal sealed class GlossaryView : IView
 
 	public void Flash(float strength)
 	{
-		if (strength > 0f)
-		{
-			frame.enabled = true;
-			frame.effectColor = Color.Lerp(Settings.PinnedColor.Value, Color.white, strength);
-		}
-		else
-		{
-			frame.enabled = pinned;
-			frame.effectColor = Settings.PinnedColor.Value;
-		}
+		frame.Show(pinned || strength > 0f, strength > 0f ? Color.Lerp(Settings.PinnedColor.Value, Color.white, strength) : Settings.PinnedColor.Value);
 	}
 
 	public void Scroll(float wheel)

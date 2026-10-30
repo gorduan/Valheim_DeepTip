@@ -19,6 +19,7 @@ internal static class Settings
 	internal static ConfigEntry<bool> Hints = null!;
 	internal static ConfigEntry<bool> ClickInsidePins = null!;
 	internal static ConfigEntry<float> MaxWidth = null!;
+	internal static ConfigEntry<float> Opacity = null!;
 	internal static ConfigEntry<string> RootSides = null!;
 	internal static ConfigEntry<string> TooltipSides = null!;
 	internal static ConfigEntry<string> ChildSides = null!;
@@ -43,6 +44,7 @@ internal static class Settings
 		Hints = config.Bind("3 - Windows", "Hints", true, "Hint line \"Click to pin · Esc closes\" in unpinned windows.");
 		ClickInsidePins = config.Bind("3 - Windows", "ClickInsidePins", true, "A click anywhere inside an unpinned window pins it.");
 		MaxWidth = config.Bind("3 - Windows", "MaxWidth", 420f, new ConfigDescription("Largest window width (GUI units).", new AcceptableValueRange<float>(200f, 900f)));
+		Opacity = config.Bind("3 - Windows", "Opacity", 0.9f, new ConfigDescription("Extra cover behind the text of DeepTip's own windows: 0 = Valheim's see-through tooltip look, 1 = solid. Applies to windows opened afterwards.", new AcceptableValueRange<float>(0f, 1f)));
 		RootSides = config.Bind("3 - Windows", "RootSides", "bottom,top,right,left", "Sides of a marked element where its window may open, in order of preference.");
 		TooltipSides = config.Bind("3 - Windows", "TooltipSides", "right,left,bottom,top", "Sides for Valheim's own tooltips (inventory slots, recipes ...).");
 		ChildSides = config.Bind("3 - Windows", "ChildSides", "left,right,top,bottom", "Sides of the previous window where a term's window may open (never covering it).");

@@ -22,7 +22,7 @@ internal sealed class TooltipView : IView
 	private readonly RectTransform panel;
 	private readonly Image pinIcon;
 	private readonly Image lockBar;
-	private readonly Outline frame;
+	private readonly Frame frame;
 	private bool pinned;
 
 	internal TooltipView(Window window, GameObject go)
@@ -43,9 +43,8 @@ internal sealed class TooltipView : IView
 		Button(decor, "Close").onClick.AddListener(() => Manager.Close(window));
 		pinIcon = decor.Find("Pin").GetComponent<Image>();
 		lockBar = decor.Find("Lock").GetComponent<Image>();
-		Transform blocker = decor.Find("Blocker");
-		frame = blocker.GetComponent<Outline>();
-		blocker.GetComponent<ClickCatcher>().Window = window;
+		decor.Find("Blocker").GetComponent<ClickCatcher>().Window = window;
+		frame = new Frame(decor);
 		decor.Find("Pin").gameObject.SetActive(Settings.PinButton.Value);
 		decor.Find("Close").gameObject.SetActive(Settings.CloseButtons.Value);
 	}
@@ -65,11 +64,6 @@ internal sealed class TooltipView : IView
 		Image image = blocker.AddComponent<Image>();
 		image.color = new Color(0f, 0f, 0f, 0f);
 		image.raycastTarget = true; // clicks inside the tooltip must not reach the slot behind it
-		Outline outline = blocker.AddComponent<Outline>();
-		outline.useGraphicAlpha = false;
-		outline.effectDistance = new Vector2(2f, -2f);
-		outline.effectColor = Settings.PinnedColor.Value;
-		outline.enabled = false;
 		blocker.AddComponent<ClickCatcher>();
 
 		Icon(decor.transform, "Close", Theme.Close, 0);
@@ -173,8 +167,7 @@ internal sealed class TooltipView : IView
 	{
 		pinned = value;
 		pinIcon.sprite = value ? Theme.PinFilled : Theme.Pin;
-		frame.enabled = value;
-		frame.effectColor = Settings.PinnedColor.Value;
+		frame.Show(value, Settings.PinnedColor.Value);
 	}
 
 	public void SetLock(float progress)
@@ -189,8 +182,7 @@ internal sealed class TooltipView : IView
 
 	public void Flash(float strength)
 	{
-		frame.enabled = pinned || strength > 0f;
-		frame.effectColor = strength > 0f ? Color.Lerp(Settings.PinnedColor.Value, Color.white, strength) : Settings.PinnedColor.Value;
+		frame.Show(pinned || strength > 0f, strength > 0f ? Color.Lerp(Settings.PinnedColor.Value, Color.white, strength) : Settings.PinnedColor.Value);
 	}
 
 	public void Scroll(float wheel)
